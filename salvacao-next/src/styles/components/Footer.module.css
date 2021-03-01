@@ -1,0 +1,27 @@
+.containerFooter{
+    width: 100vw;
+    background:#fa6e16;
+    height: 10vh;
+    bottom: 0;
+    position: relative;
+}
+
+.navFooter, .ulFooter, .liFooter, .containerFooter{
+    display: flex;
+}
+
+.navFooter{
+    margin: auto;
+}
+
+.liFooter{
+    margin: auto;
+    align-items: center;
+    padding: 10px;
+    color: white;
+    text-transform: uppercase;
+}
+
+.ulFooter{
+    padding: 0;
+}
