@@ -1,0 +1,58 @@
+.containerTopo{
+    width: 100vw;
+    background: #fa6e16;
+    height: 10vh;
+    position: fixed;
+    top: 0;
+}
+
+.ulTopo, .containerTopo{
+    display: flex;
+}
+
+.ulTopo{
+    margin: auto;
+    padding: 0;
+}
+
+.liTopo{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.navTopo{
+    margin: auto;
+}
+
+.logo{
+    width: 120px;
+    height: 120px;
+    margin: auto;
+    align-items: center;
+}
+
+.imgTopo{
+    margin-bottom: -60px;
+}
+
+.botaoLogo{
+    background: transparent;
+    border: none;
+}
+
+.botaoLinks{
+    background: transparent;
+    border: none;
+    color: white;
+    text-transform: uppercase;
+    position: relative;
+    padding: 25px;
+    text-decoration: none;
+}
+
+.botaoLinks:hover {
+    color: rgba(36, 36, 36, 0.7);
+    transition: 1s;
+    cursor: pointer;
+}
