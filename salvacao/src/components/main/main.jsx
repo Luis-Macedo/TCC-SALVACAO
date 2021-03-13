@@ -4,17 +4,17 @@ import { Switch, Route } from 'react-router-dom';
 import Home from '../Home/home';
 
 
-function Main(){
+function Main() {
 
-    return(
+    return (
         <main>
             <Switch>
-                <Route exact path='/' component={Home}/>
-                <Route path='/login' component={Login}/>
+                <Route exact path='/' component={Home} />
+                <Route path='/login' component={Login} />
             </Switch>
         </main>
     )
-    
+
 }
 
 export default Main;
