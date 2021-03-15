@@ -1,0 +1,27 @@
+.formCadastro{
+    padding: 25vh 5vw 15vh;
+}
+
+*{
+    text-transform: uppercase;
+}
+
+.FormCadastro .labelcadastro, .inputCadastro{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.labelcadastro{
+    padding: 15px;
+}
+
+.inputCadastro{
+    border: 2px solid rgba(0, 0, 0, 0.918);
+    border-radius: 5px;
+    width: 200px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.3);
+}

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../../../styles/navbar.css';
+import './navbar.css';
 
 function Nav () {
 
@@ -8,35 +8,40 @@ function Nav () {
         <div className="containerTopo">
             <div className="navTopo">
                 <ul className="ulTopo">
-                    <li className="liTopo" href="/signup">
-                        <button className="botaoLinks">
-                            Cadastre-se
-                        </button>
+                    <li className="liTopo">
+                        <Link to="/perfil">
+                            <button className="botaoLinks">
+                                Perfil
+                            </button>
+                        </Link>
                     </li>
-                    <li className="liTopo" href="/login">
-                        <Link to="login">
+                    <li className="liTopo">
+                        <Link to="/login">
                             <button className="botaoLinks">
                                 Login
                             </button>
                         </Link> 
                     </li>
-                    <li className="liTopo" hraf="/">
+                    <li className="liTopo">
                         
                         <Link to="/"><img className="logo imgTopo" src="/images/Logo.png" alt=""/>
                             <button className="botaoLogo"></button>
                         </Link>
                         
                     </li>
-                    <li className="liTopo" href="/map">
-
-                        <button className="botaoLinks">
-                            Mapa
-                        </button>
+                    <li className="liTopo">
+                        <Link to="/mapa"><img className="liTopo"/>
+                            <button className="botaoLinks">
+                                Mapa
+                            </button>
+                        </Link>
                     </li>
-                    <li className="liTopo" href="/ongs">
-                        <button className="botaoLinks">
-                            Ongs
-                        </button>
+                    <li className="liTopo">
+                        <Link to="/instituicoes">
+                            <button className="botaoLinks">
+                                Instituições
+                            </button>
+                        </Link>
                     </li>
                 </ul>
             </div>

@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import Topo from '../topo/topo';
 import Main from '../main/main';
+import './app.css';
 
 
 class App extends Component{
 
     render() {
         return (
-            <div>
+            <div className="BG">
                 <Main/>
             </div>
         )

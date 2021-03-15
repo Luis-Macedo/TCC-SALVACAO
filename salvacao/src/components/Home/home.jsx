@@ -1,16 +1,16 @@
 import React from 'react';
 import Footer from '../footer/footer';
 import Topo from '../topo/topo';
+import './home.css';
 
-function Home(){
+export default (props) => {
     return(
         <html>
+            
             <Topo/>
             <Footer/>
-        </html>
             
-        
+        </html>
     )
 }
 
-export default Home;
