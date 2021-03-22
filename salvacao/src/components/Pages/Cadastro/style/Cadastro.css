@@ -1,0 +1,89 @@
+form{
+    width: 80%;
+    margin: auto;
+    height: 95%;
+    border: 2px solid rgba(0, 0, 0, 0.600);
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 8px 8px 2px rgba(230, 102, 28, 0.349);
+}
+
+.inputs2{
+    align-items: center;
+    justify-content: center;
+    height: 75%;
+    margin: 20px;
+}
+
+.passwd2, .name2, .email2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 20%;
+    margin-top: 15px;
+    background-color: rgba(255, 255, 255, 0.450);
+    border: 2px solid rgba(0, 0, 0, 0.600);
+    border-radius: 5px;
+    box-shadow: 0 8px rgba(230, 102, 28, 0.349);
+}
+
+.botao2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgba(0, 0, 0, 0.600);
+    border-radius: 5px;
+    height: 15%;
+    margin: 0 5%;
+    background-color: rgba(255, 255, 255, 0.450);
+    box-shadow: 0 8px rgba(230, 102, 28, 0.349);
+}
+
+.passwd2 input, .name2 input, .email2 input{
+    width: 35%;
+    height: 40%;
+    margin: 10px;
+    padding: 10px;
+    border: 2px solid rgba(0, 0, 0, 0.600);
+    border-radius: 5px;
+}
+
+.passwd2 label, .name2 label, .email2 label{
+    text-transform: uppercase;
+}
+
+.linkcad2{
+    display: flex;
+    margin: auto;
+    width: 35%;
+    height: 70%;
+    text-decoration: none;
+}
+
+
+@media screen and (min-width: 1024px){
+    form{
+        width: 60%;
+    } 
+}
+
+@media screen and (max-width: 720px){
+
+    .inputs2{
+        height: 70%;
+    }
+
+    .botao2{
+        height: 15%;
+    }
+
+    .linkcad2{
+        width: 80%;
+    }
+
+    .passwd2 input, .user2 input{
+        width: 50%;
+        
+    }
+}

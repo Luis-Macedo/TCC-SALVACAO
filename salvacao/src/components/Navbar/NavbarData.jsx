@@ -2,7 +2,7 @@ import React from 'react';
 
 import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
-import * as FiIcons from 'react-icons/fi';
+import * as BiIcons from 'react-icons/bi';
 
 export const NavbarData = [
     {
@@ -20,13 +20,13 @@ export const NavbarData = [
     {
         title: 'Login',
         path: '/login',
-        icons: <FiIcons.FiLogIn/>,
+        icon: <BiIcons.BiLogIn/>, 
         cName: 'nav-text'
     },
     {
         title: 'Profile',
         path: '/profile',
-        icons: <FaIcons.FaUserAlt/>,
+        icon: <FaIcons.FaUserAlt/>,
         cName: 'nav-text'
     },
     {

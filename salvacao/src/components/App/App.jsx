@@ -6,6 +6,7 @@ import Mapa from '../Pages/Mapa/Mapa';
 import Home from '../Pages/Home/Home';
 import Login from '../Pages/Login/Login';
 import Profile from '../Pages/Profile/Profile';
+import Cadastro from '../Pages/Cadastro/Cadastro';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
           <Route path="/login" component={Login}/>
           <Route path="/profile" component={Profile}/>
           <Route path="/institution"/>
+          <Route path="/cadastro" component={Cadastro}/>
         </Switch>
       </Router>
     </>

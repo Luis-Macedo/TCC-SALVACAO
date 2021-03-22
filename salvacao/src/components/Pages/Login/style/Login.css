@@ -1,0 +1,112 @@
+form{
+    width: 80%;
+    margin: auto;
+    height: 90%;
+    border: 2px solid rgba(0, 0, 0, 0.600);
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 8px 8px 2px rgba(230, 102, 28, 0.349);
+}
+
+.inputs{
+    align-items: center;
+    justify-content: center;
+    height: 60%;
+    margin: 20px;
+}
+
+.passwd, .user{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 35%;
+    margin-top: 15px;
+    background-color: rgba(255, 255, 255, 0.450);
+    border: 2px solid rgba(0, 0, 0, 0.600);
+    border-radius: 5px;
+    box-shadow: 0 8px rgba(230, 102, 28, 0.349);
+}
+
+.botoes{
+    display: block;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgba(0, 0, 0, 0.600);
+    border-radius: 5px;
+    margin: 20px;
+    height: 30%;
+    background-color: rgba(255, 255, 255, 0.450);
+    box-shadow: 0 8px rgba(230, 102, 28, 0.349);
+}
+
+.passwd input, .user input{
+    width: 35%;
+    height: 40%;
+    margin: 10px;
+    padding: 10px;
+    border: 2px solid rgba(0, 0, 0, 0.600);
+    border-radius: 5px;
+}
+
+.passwd label, .user label{
+    text-transform: uppercase;
+}
+
+.cadastro, .cadastro-login{
+    width: 90%;
+    border-radius: 4px;
+    box-shadow: 0 5px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border: 2px solid rgba(0, 0, 0, 0.600);
+    cursor: pointer;
+    margin: 10px;
+    text-transform: uppercase;
+}
+
+.linkcad{
+    display: flex;
+    margin: auto;
+    width: 35%;
+    height: 33%;
+    text-decoration: none;
+}
+
+.cadastro:hover, .logar:hover, .cadastro-login:hover{
+    opacity: 0.65;
+    transition: all 850ms;
+    
+}
+
+.cadastro{
+    background-color: rgb(255, 94, 0);
+}
+
+.cadastro-login{
+    background-color: rgb(6, 180, 6);
+}
+
+@media screen and (min-width: 1024px){
+    form{
+        width: 60%;
+    } 
+}
+
+@media screen and (max-width: 720px){
+
+    .inputs{
+        height: 50%;
+    }
+
+    .botoes{
+        height: 35%;
+    }
+
+    .linkcad{
+        width: 80%;
+    }
+
+    .passwd input, .user input{
+        width: 50%;
+        
+    }
+}
