@@ -16,7 +16,7 @@ function Login(){
                     
                     <div className="passwd">
                         <label For="passwd">Senha:</label>
-                        <input type="text" name="passwd" id="passwd" placeholder="Digite sua senha"/>
+                        <input type="password" name="passwd" id="passwd" placeholder="Digite sua senha"/>
                     </div>
                 </div>
                 <div className="botoes">
