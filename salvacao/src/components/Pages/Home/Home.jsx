@@ -20,13 +20,7 @@ function Home(){
                             <br/>
                             Se você está procurando por ajuda com seu animal ou até mesmo quer oferecer ajuda, venha conhecer nosso sistema.
                         </p>
-                        <div className="imagem">
-                            <img src="/images/logocaogato.png" alt="" srcset=""/>
-                        </div>
-                        
-                    </div>
-
-                    
+                    </div> 
                 </div>
             </div>
         </div>

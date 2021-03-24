@@ -1,3 +1,11 @@
-h1{
-    margin: auto;
+#page-map{
+    width: 100vw;
+    height: 90vh;
+
+    position: relative;
+}
+
+
+.map{
+    z-index: 999;
 }
