@@ -9,3 +9,26 @@
 .map{
     z-index: 999;
 }
+
+.btn img{
+    width: 90%;
+    height: 90%;
+}
+
+.btn{
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    z-index: 999;
+    right: 5%;
+    bottom: 5%;
+    background-color: #fa6d16ec;
+    border-radius: 10px;
+    border: 2px solid rgba(0, 0, 0, 0.600);
+}
+
+.btn:hover{
+    cursor: pointer;
+    background-color: #fa6d16ab;
+    transition: all 850ms;
+}

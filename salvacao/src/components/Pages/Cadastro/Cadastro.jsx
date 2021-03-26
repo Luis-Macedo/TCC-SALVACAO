@@ -11,22 +11,22 @@ function Cadastro(){
                 <div className="inputs2">
                     <div className="name2">
                         <label For="name">Nome:</label>
-                        <input type="text" name="name" id="name" placeholder="Digite seu nome"/>
+                        <input type="text" name="name" id="name" placeholder="Digite seu nome" required/>
                     </div>
                     
                     <div className="email2">
                         <label For="email">Email:</label>
-                        <input type="email" name="email" id="email" placeholder="Digite seu email"/>
+                        <input type="email" name="email" id="email" placeholder="Digite seu email" required/>
                     </div>
 
                     <div className="passwd2">
                         <label For="passwd">Senha:</label>
-                        <input type="password" name="passwd" id="passwd" placeholder="Digite sua senha"/>
+                        <input type="password" name="passwd" id="passwd" placeholder="Digite sua senha" required/>
                     </div>
 
                     <div className="passwd2">
                         <label For="passwd">Confirmar:</label>
-                        <input type="password" name="passwd" id="passwd" placeholder="Confirme a senha"/>
+                        <input type="password" name="passwd" id="passwd" placeholder="Confirme a senha" required/>
                     </div>
                 </div>
 

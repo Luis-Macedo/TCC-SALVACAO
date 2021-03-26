@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './style/Mapa.css';
 import ReactMapGL from 'react-map-gl';
+import { Link } from 'react-router-dom'
 
 
 function Mapa(){
@@ -22,8 +23,14 @@ function Mapa(){
                     setViewPort(viewPort);
                 }}
             >
-
+                <Link to="/pets">
+                    <button className="btn"><img src="/images/logopata.png" alt="" srcset=""/></button>
+                </Link>
+                
+                
             </ReactMapGL>
+
+            
             
         </div>
     )

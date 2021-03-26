@@ -17,6 +17,7 @@ form{
 
 .passwd, .user{
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100%;
@@ -42,9 +43,8 @@ form{
 }
 
 .passwd input, .user input{
-    width: 55%;
-    height: 40%;
-    margin-right: 5%;
+    width: 90%;
+    height: 35%;
     padding: 10px;
     border: 2px solid rgba(0, 0, 0, 0.600);
     border-radius: 5px;
@@ -53,7 +53,7 @@ form{
 .passwd label, .user label{
     text-transform: uppercase;
     margin-right: auto;
-    padding: 5%;
+    padding-left: 5%;
 }
 
 .cadastro, .cadastro-login{
@@ -108,8 +108,4 @@ form{
         width: 80%;
     }
 
-    .passwd input, .user input{
-        width: 50%;
-        
-    }
 }

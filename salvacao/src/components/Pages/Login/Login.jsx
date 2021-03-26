@@ -11,12 +11,12 @@ function Login(){
                 <div className="inputs">
                     <div className="user">
                         <label For="user">Usuário:</label>
-                        <input type="text" name="user" id="user" placeholder="Digite seu usuário"/>
+                        <input type="text" name="user" id="user" placeholder="Digite seu usuário" required/>
                     </div>
                     
                     <div className="passwd">
                         <label For="passwd">Senha:</label>
-                        <input type="password" name="passwd" id="passwd" placeholder="Digite sua senha"/>
+                        <input type="password" name="passwd" id="passwd" placeholder="Digite sua senha" required/>
                     </div>
                 </div>
                 <div className="botoes">
