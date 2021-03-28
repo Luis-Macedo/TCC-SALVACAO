@@ -1,0 +1,120 @@
+.content{
+    margin: auto;
+    width: 80%;
+    border: 2px solid rgba(0, 0, 0, 0.664);
+    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.664);
+    height: 90%;
+    display: flex;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.photo{
+    border: 2px solid rgba(0, 0, 0, 0.664);
+    border-radius: 5px;
+    width: 30%;
+    margin: auto 2%;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.664);
+    background-color: rgba(255, 255, 255, 0.450);
+}
+
+.profilePhoto{
+    width: 85%;
+    height: 20%;
+    border-radius: 50%;
+    background: none;
+}
+
+.infos{
+    width: 60%;
+    margin: auto 2%;
+    height: 90%;
+    border: 2px solid rgba(0, 0, 0, 0.664);
+    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.664);
+    background-color: rgba(255, 255, 255, 0.450);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.infoContent{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    height: 90%;
+}
+
+.infoContent input{
+    border: none;
+    height: 8%;
+    background: transparent;
+    color: black;
+    border-bottom: 2px solid black;
+}
+
+.infoContent input, label{
+    margin-top: 2%;
+}
+
+.botao{
+    margin: 5px;
+    width: 100%;
+    height: 8%;
+    padding: 3%;
+    
+}
+
+.botao button{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: rgb(29, 226, 95);
+    border: 2px solid rgba(0, 0, 0, 0.664);
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.664);
+    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.664);
+}
+
+.botao button:hover{
+    background-color: rgba(29, 226, 95, 0.700);
+    transition: all 850ms;
+    cursor: pointer;
+}
+
+.profilePhoto img{
+    background: transparent;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.600);
+}
+
+@media screen and (min-width: 1080px){
+    .photo{
+        
+        width: 15%;
+        margin: auto 2%;
+        height: 90%;
+        
+    }
+
+    .infos{
+        width: 75%;
+    }
+}
+
+@media screen and (max-width: 720px){
+    .photo{
+        width: 40%;
+    }
+
+    .infos{
+        width: 50%;
+    }
+}

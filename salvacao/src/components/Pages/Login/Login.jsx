@@ -7,7 +7,7 @@ function Login(){
 
     return(
         <div className="container">
-            <form action="" method="get">
+            <form action="" method="post">
                 <div className="inputs">
                     <div className="user">
                         <label For="user">Usuário:</label>

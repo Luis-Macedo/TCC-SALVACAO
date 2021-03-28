@@ -30,8 +30,6 @@ function Mapa(){
                 
             </ReactMapGL>
 
-            
-            
         </div>
     )
 }
