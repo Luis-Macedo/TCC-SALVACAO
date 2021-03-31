@@ -1,0 +1,27 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "Unimar",
+            "database": "postgres",
+            "username": "postgres",
+            "password": "07032001"
+        },
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "TCC",
+            "database": "escola",
+            "username": "root",
+            "password": "MACEDO"
+        }
+    ]
+}

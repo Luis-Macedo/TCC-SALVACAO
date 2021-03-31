@@ -13,6 +13,11 @@ function Cadastro(){
                         <label For="name">Nome:</label>
                         <input type="text" name="name" id="name" placeholder="Digite seu nome" required/>
                     </div>
+
+                    <div className="rg">
+                        <label For="rg">RG:</label>
+                        <input type="text" name="rg" id="rg" placeholder="Digite seu RG" required/>
+                    </div>
                     
                     <div className="email2">
                         <label For="email">Email:</label>

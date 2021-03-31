@@ -28,6 +28,7 @@
     height: 20%;
     border-radius: 50%;
     background: none;
+    overflow-y: hidden;
 }
 
 .infos{
@@ -92,7 +93,6 @@
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.600);
 }
 
 @media screen and (min-width: 1080px){
