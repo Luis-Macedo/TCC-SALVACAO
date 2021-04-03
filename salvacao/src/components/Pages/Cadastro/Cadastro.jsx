@@ -1,48 +1,93 @@
-import React from 'react';
+import React, {Component} from 'react';
+import axios from 'axios';
 import './style/Cadastro.css';
 
+class Cadastro extends Component{
 
-function Cadastro(){
+    state = {
+        name: "",
+        rg: "",
+        email: "",
+        passwd: ""
+    };
 
-    return(
-        <div className="container">
-            <form action="" method="post">
+    handleNameChange = e =>{
+        this.setState({
+            name: e.target.value
+        });
+    };
 
-                <div className="inputs2">
-                    <div className="name2">
-                        <label For="name">Nome:</label>
-                        <input type="text" name="name" id="name" placeholder="Digite seu nome" required/>
+    handleRgChange = e =>{
+        this.setState({
+            rg: e.target.value
+        });
+    };
+
+    handleEmailChange = e =>{
+        this.setState({
+            email: e.target.value
+        });
+    };
+
+    handlePasswdChange = e =>{
+        this.setState({
+            passwd: e.target.value
+        });
+    };
+
+    handleFormSubmit = e =>{
+        e.preventDefault();
+        const data = {
+            name: this.state.name,
+            rg: this.state.rg,
+            email: this.state.email,
+            passwd: this.state.passwd
+        };
+        axios.post("http://localhost:3001/cadastro", data).then(res => console.log(res))
+        .catch(err => console.log(err));
+    }
+
+    render() {
+        return(
+            <div className="container">
+                <form action="/cadastro" method="post" onSubmit={this.handleFormSubmit}>
+
+                    <div className="inputs2">
+                        <div className="name2">
+                            <label htmlFor="name">Nome:</label>
+                            <input type="text" name="name" id="name" placeholder="Digite seu nome" value={this.state.name} onChange={this.handleNameChange} required/>
+                        </div>
+
+                        <div className="rg">
+                            <label htmlFor="rg">RG:</label>
+                            <input type="text" name="rg" id="rg" placeholder="Digite seu RG" value={this.state.rg} onChange={this.handleRgChange} required/>
+                        </div>
+                        
+                        <div className="email2">
+                            <label htmlFor="email">Email:</label>
+                            <input type="email" name="email" id="email" placeholder="Digite seu email" value={this.state.email} onChange={this.handleEmailChange} required/>
+                        </div>
+
+                        <div className="passwd2">
+                            <label htmlFor="passwd">Senha:</label>
+                            <input type="password" name="passwd" id="passwd" placeholder="Digite sua senha" value={this.state.passwd} onChange={this.handlePasswdChange} required/>
+                        </div>
+
+                        <div className="passwd2">
+                            <label htmlFor="passwd">Confirmar:</label>
+                            <input type="password" name="passwd" id="passwd" placeholder="Confirme a senha" required/>
+                        </div>
                     </div>
 
-                    <div className="rg">
-                        <label For="rg">RG:</label>
-                        <input type="text" name="rg" id="rg" placeholder="Digite seu RG" required/>
+                    <div className="botao2">
+                        <div className="linkcad2">
+                            <button type="submit" className="cadastro-login"> Cadastrar </button>
+                        </div>
                     </div>
-                    
-                    <div className="email2">
-                        <label For="email">Email:</label>
-                        <input type="email" name="email" id="email" placeholder="Digite seu email" required/>
-                    </div>
-
-                    <div className="passwd2">
-                        <label For="passwd">Senha:</label>
-                        <input type="password" name="passwd" id="passwd" placeholder="Digite sua senha" required/>
-                    </div>
-
-                    <div className="passwd2">
-                        <label For="passwd">Confirmar:</label>
-                        <input type="password" name="passwd" id="passwd" placeholder="Confirme a senha" required/>
-                    </div>
-                </div>
-
-                <div className="botao2">
-                    <div className="linkcad2">
-                        <button type="submit" className="cadastro-login"> Cadastrar </button>
-                    </div>
-                </div>
-            </form>
-        </div>
-    )
+                </form>
+            </div>
+        )
+    }
 }
 
 export default Cadastro;

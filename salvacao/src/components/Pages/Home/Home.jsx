@@ -1,7 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './style/Home.css';
+import axios from 'axios';
 
 function Home(){
+
+    useEffect(() =>{
+        axios.get("http://localhost:3001/").then(response =>{
+            console.log(response.data);
+        })
+    }, []);
 
     return(
         <div className="container">
