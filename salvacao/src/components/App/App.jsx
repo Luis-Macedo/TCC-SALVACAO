@@ -1,5 +1,6 @@
 import './App.css';
 import React from 'react';
+import { history } from './history'
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 import Navbar from '../Navbar/Navbar';
 import Mapa from '../Pages/Mapa/Mapa';
@@ -9,22 +10,20 @@ import Profile from '../Pages/Profile/Profile';
 import Cadastro from '../Pages/Cadastro/Cadastro';
 
 
-function App() {
-  return (
-    <>
-      <Router>
-        <Navbar/>
-        <Switch>
-          <Route path="/" exact component={Home}/>
-          <Route path='/map' component={Mapa}/>
-          <Route path="/login" component={Login}/>
-          <Route path="/profile" component={Profile}/>
-          <Route path="/institution"/>
-          <Route path="/cadastro" component={Cadastro}/>
-        </Switch>
-      </Router>
-    </>
-  );
-}
+const App = () => (
+  
+  <Router history={history}>
+    <Navbar/>
+    <Switch >
+      <Route component={Home} exact path="/"/>
+      <Route component={Mapa} exact path='/map'/>
+      <Route component={Login} exact path="/login"/>
+      <Route component={Profile} exact path="/profile" />
+      <Route component={Cadastro} exact path="/cadastro" />
+    </Switch>
+  </Router>
+    
+
+)
 
 export default App;

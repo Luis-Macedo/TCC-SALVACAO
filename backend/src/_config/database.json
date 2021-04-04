@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "root",
+    "password": "MACEDO",
+    "database": "salvacao",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "password": "MACEDO",
+    "database": "salvacao",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": "MACEDO",
+    "database": "salvacao",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}

@@ -6,7 +6,6 @@ class Cadastro extends Component{
 
     state = {
         name: "",
-        rg: "",
         email: "",
         passwd: ""
     };
@@ -14,12 +13,6 @@ class Cadastro extends Component{
     handleNameChange = e =>{
         this.setState({
             name: e.target.value
-        });
-    };
-
-    handleRgChange = e =>{
-        this.setState({
-            rg: e.target.value
         });
     };
 
@@ -39,11 +32,10 @@ class Cadastro extends Component{
         e.preventDefault();
         const data = {
             name: this.state.name,
-            rg: this.state.rg,
             email: this.state.email,
             passwd: this.state.passwd
         };
-        axios.post("http://localhost:3001/cadastro", data).then(res => console.log(res))
+        axios.post("http://localhost:3001/teste/user", data).then(res => console.log(res))
         .catch(err => console.log(err));
     }
 
@@ -56,11 +48,6 @@ class Cadastro extends Component{
                         <div className="name2">
                             <label htmlFor="name">Nome:</label>
                             <input type="text" name="name" id="name" placeholder="Digite seu nome" value={this.state.name} onChange={this.handleNameChange} required/>
-                        </div>
-
-                        <div className="rg">
-                            <label htmlFor="rg">RG:</label>
-                            <input type="text" name="rg" id="rg" placeholder="Digite seu RG" value={this.state.rg} onChange={this.handleRgChange} required/>
                         </div>
                         
                         <div className="email2">

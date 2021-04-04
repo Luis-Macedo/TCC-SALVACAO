@@ -10,7 +10,7 @@ function Profile() {
             <div className="content">
                 <div className="photo">
                     <div className="profilePhoto">
-                        <img src="/images/logoCircular.png" alt="" srcset=""/>
+                        <img srcSet="/images/logoCircular.png" alt=""/>
                     </div>
                     
                     <div className="botao">

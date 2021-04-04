@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import './style/Mapa.css';
 import ReactMapGL from 'react-map-gl';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import { history } from '../../App/history'
 
 
 function Mapa(){
@@ -14,6 +15,15 @@ function Mapa(){
         zoom: 10
     });
 
+    const validarLogin = () =>{
+        if(!!localStorage.getItem('app-token')){
+            alert("deu certo")
+        }else{
+            history.push('/login')
+            window.location.reload()
+        }
+    }
+
     return(
         <div id="page-map">
             <ReactMapGL 
@@ -24,7 +34,7 @@ function Mapa(){
                 }}
             >
                 <Link to="/pets">
-                    <button className="btn"><img src="/images/logopata.png" alt="" srcset=""/></button>
+                    <button className="btn"><img srcSet="/images/logopata.png" alt="" onClick={validarLogin}/></button>
                 </Link>
                 
                 

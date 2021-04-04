@@ -24,7 +24,7 @@ function Navbar() {
                     </Link>
 
                     <div className="logo">
-                        <img src="/images/logosalvacao94h.png" alt="" srcset=""/>
+                        <img srcSet="/images/logosalvacao94h.png" alt=""/>
                     </div>
                 </div>
 

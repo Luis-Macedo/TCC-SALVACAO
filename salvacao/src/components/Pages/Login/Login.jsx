@@ -1,36 +1,77 @@
 import React from 'react';
 import './style/Login.css';
-import { Link } from 'react-router-dom';
+import axios from 'axios';
+import * as Yup from 'yup';
+import { Formik, Form, Field } from 'formik';
+import {Link} from 'react-router-dom';
+import {history} from '../../App/history';
 
 
-function Login(){
+const Login = () => {
+
+    const validations = Yup.object().shape({
+        email: Yup.string().email().required(),
+        senha: Yup.string().min(1).required()
+    })
+
+    const handleFormSubmit = values =>{
+        
+        axios.post("http://localhost:3001/teste", values).then(res => {
+            const { data } = res
+            console.log(data)
+            if(data){
+                alert(data)
+                localStorage.setItem("app-token", data)
+                history.push('/map')
+                window.location.reload()
+            }
+        })
+        .catch(err => alert(err));
+    };
 
     return(
+
         <div className="container">
-            <form action="" method="post">
-                <div className="inputs">
-                    <div className="user">
-                        <label For="user">Usuário:</label>
-                        <input type="text" name="user" id="user" placeholder="Digite seu usuário" required/>
+            <Formik
+                initialValues={{}}
+                onSubmit={handleFormSubmit}
+                validationSchema={validations}
+            >
+                <Form>
+                    <div className="inputs">
+                        <div className="user">
+                            <Field
+                                className="input"
+                                placeholder="Digite seu email"
+                                name="email"
+                            />
+                            
+                        </div>
+                        <div className="passwd">
+                            <Field
+                                className="input"
+                                placeholder="Digite sua senha"
+                                name="senha"
+                            />
+                        </div>
                     </div>
                     
-                    <div className="passwd">
-                        <label For="passwd">Senha:</label>
-                        <input type="password" name="passwd" id="passwd" placeholder="Digite sua senha" required/>
+                    <div className="botoes">
+                        <div className="linkcad">
+                            <button className="cadastro-login" type="submit">Login</button>
+                        </div>
+                        
+                        <Link className="linkcad" to="/">
+                            <button className="cadastro">Esqueci a senha</button>
+                        </Link>
+                            
+                        
+                        <Link to="/cadastro" className="linkcad">
+                            <button className="cadastro">Cadastrar-se</button>
+                        </Link>
                     </div>
-                </div>
-                <div className="botoes">
-                    <Link to="/cadastro" className="linkcad">
-                        <button className="cadastro">Cadastrar-se</button>
-                    </Link>
-                    <Link to="/configuracoes" className="linkcad">
-                        <button className="cadastro">Esqueci Minha senha</button>
-                    </Link>
-                    <div className="linkcad">
-                        <button type="submit" className="cadastro-login"> Logar </button>
-                    </div>
-                </div>
-            </form>
+                </Form>
+            </Formik>
         </div>
     )
 }
