@@ -74,7 +74,7 @@ const Cadastro = () => {
 
                     <div className="botao2">
                         <div className="linkcad2">
-                            <button type="submit" className="cadastro-login"> Cadastrar </button>
+                            <button type="submit" className="cadastro-login2"> Cadastrar </button>
                         </div>
                     </div>
                 </Form>

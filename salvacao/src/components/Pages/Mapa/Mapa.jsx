@@ -11,13 +11,13 @@ function Mapa(){
         latitude: -27.2092052,
         longitude: -49.6401092,
         width: '100vw',
-        height: '100vh',
+        height: '90vh',
         zoom: 8
     });
 
     const validarLogin = () =>{
         if(!!localStorage.getItem('app-token')){
-            alert("deu certo")
+            alert("Redirecinando para página")
         }else{
             history.push('/login')
             window.location.reload()

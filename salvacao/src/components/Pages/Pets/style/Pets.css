@@ -39,16 +39,18 @@
     width: 50%;
     height: 30%;
     padding: 0 10px;
-}
-
-.descricao{
     color: black;
     text-transform: uppercase;
     font-size: large;
+    border: 2px solid rgba(0, 0, 0, 0.651);
+    border-radius: 5px;
 }
+
 .data{
     width: 30%;
-    height: 10%;
+    height: 15%;
+    border: 2px solid rgba(0, 0, 0, 0.651);
+    border-radius: 5px;
 }
 
 .btn-relatar{
@@ -66,4 +68,24 @@
     border-radius: 5px;
     border: 2px solid rgba(0, 0, 0, 0.651);
     text-transform: uppercase;
+}
+
+@media screen and (max-width: 1080px){
+    .descricao, .data, .btn-relatar{
+        width: 80%;
+    }
+
+    .descricao{
+        height: 25%;
+    }
+}
+
+@media screen and (max-width: 720px){
+    .descricao, .data, .btn-relatar{
+        width: 90%;
+    }
+
+    .descricao{
+        height: 25%;
+    }
 }

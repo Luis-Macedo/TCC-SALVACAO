@@ -30,7 +30,7 @@ const Pets = () => {
                 </div>
 
                 <div className="form">
-                    <Formik>
+                    <Formik initialValues={{}}>
                         <Form className="formulario">
                             <Field
                                 placeholder="Descrição"
@@ -51,7 +51,6 @@ const Pets = () => {
                 </div>
                 
             </div>
-            
             
         </div>
     )
