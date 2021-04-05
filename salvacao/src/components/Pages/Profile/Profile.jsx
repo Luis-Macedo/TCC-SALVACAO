@@ -2,7 +2,7 @@ import React from 'react';
 import './style/Profile.css';
 import { Link } from 'react-router-dom';
 
-function Profile() {
+const Profile = () => {
 
     return(
         <div className="container">
@@ -29,9 +29,6 @@ function Profile() {
 
                         <label htmlFor="email">Email: </label>
                         <input type="text" name="email" id="email" placeholder="EmailTeste@outlook.com" disabled/>
-
-                        <label htmlFor="birth">Nascimento: </label>
-                        <input type="text" name="birth" id="birth" placeholder="07/03/2001" disabled/>
 
                         <label htmlFor="city">Cidade: </label>
                         <input type="text" name="city" id="city" placeholder="São Paulo" disabled/>

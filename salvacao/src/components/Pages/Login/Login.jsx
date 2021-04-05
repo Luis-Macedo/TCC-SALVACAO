@@ -20,13 +20,13 @@ const Login = () => {
             const { data } = res
             console.log(data)
             if(data){
-                alert(data)
+                alert("Login efetuado com sucesso")
                 localStorage.setItem("app-token", data)
                 history.push('/map')
                 window.location.reload()
             }
         })
-        .catch(err => alert(err));
+        .catch(err => alert(`Login não pôde ser efetuado: ${err}`));
     };
 
     return(
@@ -49,6 +49,7 @@ const Login = () => {
                         </div>
                         <div className="passwd">
                             <Field
+                                type="password"
                                 className="input"
                                 placeholder="Digite sua senha"
                                 name="senha"

@@ -1,0 +1,69 @@
+.corpo{
+    width: 90%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    
+    border-radius: 10px;
+}
+
+.mapa{
+    width: 100%;
+    height: 29%;
+    margin-bottom: 1%;
+    border-radius: 10px;
+    overflow-y: hidden;
+    border: 2px solid rgba(0, 0, 0, 0.651);
+}
+
+.form{
+    width: 100%;
+    height: 70%;
+    box-shadow: 8px 8px rgba(230, 102, 28, 0.349);
+    
+}
+
+.formulario{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    border: 2px solid rgba(0, 0, 0, 0.651);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.descricao{
+    width: 50%;
+    height: 30%;
+    padding: 0 10px;
+}
+
+.descricao{
+    color: black;
+    text-transform: uppercase;
+    font-size: large;
+}
+.data{
+    width: 30%;
+    height: 10%;
+}
+
+.btn-relatar{
+    width: 20%;
+    height: 15%;
+    position: relative;
+    align-self: center;
+}
+
+.btn-relatar button{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    background: rgb(6, 180, 6);
+    border-radius: 5px;
+    border: 2px solid rgba(0, 0, 0, 0.651);
+    text-transform: uppercase;
+}

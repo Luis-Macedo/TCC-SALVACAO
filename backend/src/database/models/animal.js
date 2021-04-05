@@ -19,8 +19,7 @@ module.exports = (sequelize, DataTypes) => {
     descricao: DataTypes.STRING,
     foto: DataTypes.STRING,
     data: DataTypes.DATE,
-    status: DataTypes.BOOLEAN,
-    id_usuario: DataTypes.INTEGER
+    status: DataTypes.BOOLEAN
   }, {
     sequelize,
     modelName: 'animal',

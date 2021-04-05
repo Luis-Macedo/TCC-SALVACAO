@@ -29,14 +29,6 @@ module.exports = {
       status: {
         type: Sequelize.BOOLEAN
       },
-      id_usuario: {
-        primaryKey: true,
-        type: Sequelize.INTEGER,
-        references: {
-          model: 'usuarios',
-          key: 'id'
-        }
-      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

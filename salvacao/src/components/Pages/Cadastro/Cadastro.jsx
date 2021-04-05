@@ -1,68 +1,74 @@
-import React, {Component} from 'react';
+import React from 'react';
 import axios from 'axios';
 import './style/Cadastro.css';
+import { Formik, Form, Field } from 'formik';
+import * as Yup from 'yup';
+import { history } from '../../App/history';
 
-class Cadastro extends Component{
+const Cadastro = () => {
 
-    state = {
-        name: "",
-        email: "",
-        passwd: ""
-    };
+    const validations = Yup.object().shape({
+        nome: Yup.string().required(),
+        email: Yup.string().email().required(),
+        senha: Yup.string().min(4).required()
+    })
 
-    handleNameChange = e =>{
-        this.setState({
-            name: e.target.value
-        });
-    };
-
-    handleEmailChange = e =>{
-        this.setState({
-            email: e.target.value
-        });
-    };
-
-    handlePasswdChange = e =>{
-        this.setState({
-            passwd: e.target.value
-        });
-    };
-
-    handleFormSubmit = e =>{
-        e.preventDefault();
-        const data = {
-            name: this.state.name,
-            email: this.state.email,
-            passwd: this.state.passwd
-        };
-        axios.post("http://localhost:3001/teste/user", data).then(res => console.log(res))
-        .catch(err => console.log(err));
+    const handleFormSubmit = values =>{
+        
+        
+        axios.post("http://localhost:3001/teste/user", values).then(res => {
+            const { data } = res
+            console.log(data)
+            if(data){
+                alert("Cadastro Efetuado com sucesso")
+                history.push('/login')
+                window.location.reload()
+            }
+        })
+        .catch(err => alert(`Cadastro não pôde ser efetuado: Email já cadastrado`));
     }
 
-    render() {
-        return(
-            <div className="container">
-                <form action="/cadastro" method="post" onSubmit={this.handleFormSubmit}>
-
+    return(
+        <div className="container">
+            <Formik
+                onSubmit={handleFormSubmit}
+                initialValues={{}}
+                validationSchema={validations}
+            >
+                <Form>
                     <div className="inputs2">
                         <div className="name2">
-                            <label htmlFor="name">Nome:</label>
-                            <input type="text" name="name" id="name" placeholder="Digite seu nome" value={this.state.name} onChange={this.handleNameChange} required/>
+                            <Field
+                                className="input2"
+                                placeholder="Digite seu nome"
+                                name="nome"
+                            />
                         </div>
                         
                         <div className="email2">
-                            <label htmlFor="email">Email:</label>
-                            <input type="email" name="email" id="email" placeholder="Digite seu email" value={this.state.email} onChange={this.handleEmailChange} required/>
+                            <Field
+                                className="input2"
+                                placeholder="Digite seu email"
+                                name="email"
+                            />
                         </div>
 
                         <div className="passwd2">
-                            <label htmlFor="passwd">Senha:</label>
-                            <input type="password" name="passwd" id="passwd" placeholder="Digite sua senha" value={this.state.passwd} onChange={this.handlePasswdChange} required/>
+                            <Field
+                                className="input2"
+                                placeholder="Digite sua senha"
+                                name="senha"
+                                type="password"
+                            />
                         </div>
 
                         <div className="passwd2">
-                            <label htmlFor="passwd">Confirmar:</label>
-                            <input type="password" name="passwd" id="passwd" placeholder="Confirme a senha" required/>
+                            <Field
+                                className="input2"
+                                placeholder="Confirme sua senha"
+                                name="senha2"
+                                type="password"
+                            />
                         </div>
                     </div>
 
@@ -71,10 +77,11 @@ class Cadastro extends Component{
                             <button type="submit" className="cadastro-login"> Cadastrar </button>
                         </div>
                     </div>
-                </form>
-            </div>
-        )
-    }
+                </Form>
+                
+            </Formik>
+        </div>
+    )
 }
 
 export default Cadastro;

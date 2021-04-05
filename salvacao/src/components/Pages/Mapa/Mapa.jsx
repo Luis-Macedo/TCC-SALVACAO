@@ -11,8 +11,8 @@ function Mapa(){
         latitude: -27.2092052,
         longitude: -49.6401092,
         width: '100vw',
-        height: '90vh',
-        zoom: 10
+        height: '100vh',
+        zoom: 8
     });
 
     const validarLogin = () =>{
@@ -36,7 +36,6 @@ function Mapa(){
                 <Link to="/pets">
                     <button className="btn"><img srcSet="/images/logopata.png" alt="" onClick={validarLogin}/></button>
                 </Link>
-                
                 
             </ReactMapGL>
 
