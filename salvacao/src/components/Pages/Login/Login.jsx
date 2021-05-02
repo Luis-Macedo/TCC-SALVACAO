@@ -16,12 +16,12 @@ const Login = () => {
 
     const handleFormSubmit = values =>{
         
-        axios.post("http://localhost:3001/teste", values).then(res => {
+        axios.post("http://localhost:3001/login", values).then(res => {
             const { data } = res
             console.log(data)
             if(data){
                 alert("Login efetuado com sucesso")
-                localStorage.setItem("app-token", data)
+                sessionStorage.setItem("app-token", data)
                 history.push('/map')
                 window.location.reload()
             }

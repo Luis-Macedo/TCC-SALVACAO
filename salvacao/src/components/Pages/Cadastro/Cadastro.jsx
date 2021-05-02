@@ -16,7 +16,7 @@ const Cadastro = () => {
     const handleFormSubmit = values =>{
         
         
-        axios.post("http://localhost:3001/teste/user", values).then(res => {
+        axios.post("http://localhost:3001/create/user", values).then(res => {
             const { data } = res
             console.log(data)
             if(data){

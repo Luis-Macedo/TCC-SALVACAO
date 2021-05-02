@@ -1,9 +1,13 @@
+@import '~mapbox-gl/dist/mapbox-gl.css';
+@import '~leaflet/dist/leaflet.css';
+
 #page-map{
     width: 100vw;
     height: 90vh;
 
     position: relative;
 }
+
 
 .map{
     z-index: 999;
