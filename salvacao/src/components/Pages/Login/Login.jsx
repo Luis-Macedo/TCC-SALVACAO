@@ -5,6 +5,7 @@ import * as Yup from 'yup';
 import { Formik, Form, Field } from 'formik';
 import {Link} from 'react-router-dom';
 import {history} from '../../App/history';
+import api from '../../../services/api';
 
 
 const Login = () => {
@@ -16,7 +17,7 @@ const Login = () => {
 
     const handleFormSubmit = values =>{
         
-        axios.post("http://localhost:3001/login", values).then(res => {
+        api.post("/login", values).then(res => {
             const { data } = res
             console.log(data)
             if(data){

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import * as FaIcons from 'react-icons/fa'
 import './style/Mapa.css';
-import ReactMapGL, { Marker, MarkerProps } from 'react-map-gl';
+import ReactMapGL, { Marker } from 'react-map-gl';
 import { Link } from 'react-router-dom';
 import { history } from '../../App/history'
 
@@ -8,11 +9,11 @@ import { history } from '../../App/history'
 function Mapa(){
 
     const[viewPort, setViewPort] = useState({
-        latitude: -27.2092052,
-        longitude: -49.6401092,
+        latitude: -22.2130026,
+        longitude: -49.9585247,
         width: '100vw',
         height: '90vh',
-        zoom: 8
+        zoom: 15
     });
 
     const validarLogin = () =>{
@@ -33,6 +34,13 @@ function Mapa(){
                     setViewPort(viewPort);
                 }}
             >
+
+                <Marker
+                    latitude={-22.2130026} longitude = {-49.9585247}
+                >
+                    <FaIcons.FaMapMarker size={45} color={`#f36229`}/>
+                </Marker>
+
                 <Link to="/pets">
                     <button className="btn"><img srcSet="/images/logopata.png" alt="" onClick={validarLogin}/></button>
                 </Link>

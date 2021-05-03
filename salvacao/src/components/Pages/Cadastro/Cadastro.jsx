@@ -4,6 +4,7 @@ import './style/Cadastro.css';
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import { history } from '../../App/history';
+import api from '../../../services/api';
 
 const Cadastro = () => {
 
@@ -16,7 +17,7 @@ const Cadastro = () => {
     const handleFormSubmit = values =>{
         
         
-        axios.post("http://localhost:3001/create/user", values).then(res => {
+        api.post("/create/user", values).then(res => {
             const { data } = res
             console.log(data)
             if(data){
