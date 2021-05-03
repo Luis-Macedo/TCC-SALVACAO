@@ -1,6 +1,5 @@
 import React from 'react';
 import './style/Login.css';
-import axios from 'axios';
 import * as Yup from 'yup';
 import { Formik, Form, Field } from 'formik';
 import {Link} from 'react-router-dom';

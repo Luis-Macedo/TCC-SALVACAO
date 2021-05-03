@@ -1,5 +1,4 @@
 import React from 'react';
-import axios from 'axios';
 import './style/Cadastro.css';
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
