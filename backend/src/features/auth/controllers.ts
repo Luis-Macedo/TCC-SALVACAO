@@ -22,7 +22,9 @@ module.exports = {
         if(usuario){
             response.body = {
                 result: jwt.sign({ email: usuario.email }, `segredo`),
-                email: usuario.email
+                email: usuario.email,
+                id: usuario.id,
+                nome: usuario.nome
             }
         }else{
             response.status = 401

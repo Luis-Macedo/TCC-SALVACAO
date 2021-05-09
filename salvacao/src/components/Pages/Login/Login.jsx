@@ -21,7 +21,8 @@ const Login = () => {
             console.log(data)
             if(data){
                 alert("Login efetuado com sucesso")
-                sessionStorage.setItem("app-token", data)
+                sessionStorage.setItem("id", data.id);
+                sessionStorage.setItem("nome", data.nome);
                 history.push('/map')
                 window.location.reload()
             }
@@ -31,7 +32,7 @@ const Login = () => {
 
     return(
 
-        <div className="container">
+        <div className="containerLogin">
             <Formik
                 initialValues={{}}
                 onSubmit={handleFormSubmit}

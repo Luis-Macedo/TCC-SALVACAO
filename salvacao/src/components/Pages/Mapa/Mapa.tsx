@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import * as FaIcons from 'react-icons/fa'
+import * as FaIcons from 'react-icons/fa';
 import './style/Mapa.css';
 import ReactMapGL, { Marker } from 'react-map-gl';
 import { Link } from 'react-router-dom';
@@ -13,7 +13,7 @@ function Mapa(){
         longitude: -49.9585247,
         width: '100vw',
         height: '90vh',
-        zoom: 15
+        zoom: 12
     });
 
     const validarLogin = () =>{
@@ -36,7 +36,7 @@ function Mapa(){
             >
 
                 <Marker
-                    latitude={-22.2130026} longitude = {-49.9585247}
+                    latitude={-22.2130026} longitude = {-49.9585247} offsetLeft={-25} offsetTop={-50}
                 >
                     <FaIcons.FaMapMarker size={45} color={`#f36229`}/>
                 </Marker>

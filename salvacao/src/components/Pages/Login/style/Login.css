@@ -1,11 +1,17 @@
 .form-container{
     width: 80%;
     margin: auto;
-    height: 90%;
     border: 2px solid rgba(0, 0, 0, 0.600);
     border-radius: 5px;
     background-color: rgba(255, 255, 255, 0.3);
-    box-shadow: 8px 8px 2px rgba(230, 102, 28, 0.349);
+    box-shadow: 8px 8px rgba(230, 102, 28, 0.349);
+}
+
+.containerLogin{
+    display: flex;
+    padding: 5% 0;
+    position: relative;
+    overflow-y: hidden;
 }
 
 .inputs{
@@ -13,7 +19,6 @@
     justify-content: center;
     height: 55%;
     width: 100%;
-    margin: 5%;
 }
 
 .passwd, .user{
@@ -21,9 +26,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 90%;
-    height: 45%;
-    margin-top: 15px;
+    height: 40%;
+    margin: 2%;
     overflow-y: hidden;
     background-color: rgba(255, 255, 255, 0.450);
     border: 2px solid rgba(0, 0, 0, 0.600);
@@ -38,7 +42,7 @@
     border: 2px solid rgba(0, 0, 0, 0.600);
     border-radius: 5px;
     margin: 20px;
-    height: 30%;
+    height: 33%;
     background-color: rgba(255, 255, 255, 0.450);
     box-shadow: 0 8px rgba(230, 102, 28, 0.349);
 }
@@ -92,6 +96,7 @@
 
     .inputs{
         height: 50%;
+        padding: 2%;
     }
 
     .botoes{
@@ -104,7 +109,7 @@
     }
 
     .cadastro, .cadastro-login{
-        margin: 15% 5% 0 5%;
+        margin: 5%;
     }
 
 }

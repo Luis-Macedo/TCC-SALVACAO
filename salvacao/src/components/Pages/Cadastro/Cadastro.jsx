@@ -29,7 +29,7 @@ const Cadastro = () => {
     }
 
     return(
-        <div className="container">
+        <div className="containerCad">
             <Formik
                 onSubmit={handleFormSubmit}
                 initialValues={{}}

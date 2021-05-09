@@ -1,6 +1,5 @@
 import React from 'react';
 import './style/Profile.css';
-import { Link } from 'react-router-dom';
 
 const Profile = () => {
 
@@ -8,20 +7,6 @@ const Profile = () => {
         <div className="container">
 
             <div className="content">
-                <div className="photo">
-                    <div className="profilePhoto">
-                        <img srcSet="/images/logoCircular.png" alt=""/>
-                    </div>
-                    
-                    <div className="botao">
-                        <Link to="/editProfile">
-                            <button className="btnEdit">Editar perfil</button>
-                        </Link>
-                    </div>
-                    
-                    
-                </div>
-
                 <div className="infos">
                     <div className="infoContent">
                         <label htmlFor="nome">Nome: </label>

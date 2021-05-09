@@ -1,25 +1,34 @@
 /* eslint-disable no-restricted-globals */
 import React, { FormEvent, useState, ChangeEvent } from 'react';
 import './style/Pets.css';
+import * as FaIcons from 'react-icons/fa';
 import { FiPlus } from "react-icons/fi";
-import {InteractiveMap} from 'react-map-gl';
+import MapGL, {Marker, MapEvent} from 'react-map-gl';
 
 
 const Pets = () => {
 
+    const [position, setPosition] = useState({latitude: 0, longitude: 0});
     const [images, setImages] = useState<File[]>([]);
     const [previewImages, setPreviewImages] = useState<string[]>([]);
 
-    const handleFormSubmit = values =>{
-    };
-
     const[viewPort, setViewPort] = useState({
-        latitude: -27.2092052,
+        latitude: -22.2092052,
         longitude: -49.6401092,
         width: '100%',
         height: '100%',
-        zoom: 10
+        zoom: 5
     });
+
+    function handleMapClick(event: MapEvent){
+        const [lng, lat] = event.lngLat;
+        setPosition(
+            {
+                latitude: lat,
+                longitude: lng
+            }
+        );
+    }
 
     function handleSelectImages(event: ChangeEvent<HTMLInputElement>){
 
@@ -43,20 +52,34 @@ const Pets = () => {
         <div className="containerpets">
 
             <div className="corpo">
-                <div className="mapa">
-                    <InteractiveMap 
-                        {...viewPort}
-                        
-                        mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
-                        onViewportChange={(viewPort) => {
-                            setViewPort(viewPort);
-                        }}
-                    ></InteractiveMap>
-                </div>
+                
 
                 <div className="form">
                 
                     <form className="formulario">
+
+                        <div className="mapa">
+                            <MapGL 
+                                {...viewPort}
+                                
+                                mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
+                                onViewportChange={(viewPort) => {
+                                    setViewPort(viewPort);
+                                }}
+                                onClick={handleMapClick}
+
+                            >
+                                
+                                {
+                                    position.latitude !== 0
+                                    && (<Marker latitude={position.latitude} longitude={position.longitude} offsetLeft={-25} offsetTop={-50}>
+                                            <FaIcons.FaMapMarker size={45} color={`#f36229`}/>
+                                        </Marker> 
+                                    )
+                                }
+
+                            </MapGL>
+                        </div>
 
                         <div className="esquerda">
                             <label htmlFor="descricao">Descrição do caso</label>
