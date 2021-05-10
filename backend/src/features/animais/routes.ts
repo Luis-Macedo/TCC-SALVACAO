@@ -1,5 +1,7 @@
-const controllers = require("./controllers")
+export {};
+
+const controllers = require('./controllers');
 
 module.exports = router => {
-    router.post('/teste/animal', controllers.create)
+    router.post('/pets', controllers.insertAnimal)
 }

@@ -4,6 +4,7 @@ import './style/Pets.css';
 import * as FaIcons from 'react-icons/fa';
 import { FiPlus } from "react-icons/fi";
 import MapGL, {Marker, MapEvent} from 'react-map-gl';
+import api from '../../../services/api';
 
 
 const Pets = () => {
@@ -11,6 +12,7 @@ const Pets = () => {
     const [position, setPosition] = useState({latitude: 0, longitude: 0});
     const [images, setImages] = useState<File[]>([]);
     const [previewImages, setPreviewImages] = useState<string[]>([]);
+    const [descricao, setDescricao] = useState('');
 
     const[viewPort, setViewPort] = useState({
         latitude: -22.2092052,
@@ -28,6 +30,8 @@ const Pets = () => {
                 longitude: lng
             }
         );
+
+        return [lng, lat]
     }
 
     function handleSelectImages(event: ChangeEvent<HTMLInputElement>){
@@ -47,6 +51,25 @@ const Pets = () => {
         setPreviewImages(selectedImagesPreview);
     }
 
+    async function handleSubmit(event: FormEvent<HTMLFormElement>){
+        event.preventDefault();
+
+        const dados = {
+            latitude: position.latitude, 
+            longitude: position.longitude, 
+            descricao: descricao
+        }
+        await api.post('/pets', dados).then(res => {
+            const { data } = res
+            console.log(data)
+            if(data){
+                alert(`Animal cadastrado ${data}`)
+            }
+        })
+        .catch(err => alert(`Login não pôde ser efetuado: ${err}`));
+    
+    }
+
     return(
 
         <div className="containerpets">
@@ -56,7 +79,7 @@ const Pets = () => {
 
                 <div className="form">
                 
-                    <form className="formulario">
+                    <form onSubmit={handleSubmit} className="formulario">
 
                         <div className="mapa">
                             <MapGL 
@@ -67,7 +90,6 @@ const Pets = () => {
                                     setViewPort(viewPort);
                                 }}
                                 onClick={handleMapClick}
-
                             >
                                 
                                 {
@@ -87,6 +109,9 @@ const Pets = () => {
                                 placeholder="Descrição"
                                 name="descricao"
                                 className="descricao"
+                                id="descricao"
+                                value={descricao}
+                                onChange={event => setDescricao(event.target.value)}
                             />
                             <input
                                 type="date"

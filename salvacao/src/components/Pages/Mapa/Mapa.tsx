@@ -17,7 +17,7 @@ function Mapa(){
     });
 
     const validarLogin = () =>{
-        if(!!sessionStorage.getItem('app-token')){
+        if(!!sessionStorage.getItem('id')){
             alert("Redirecinando para página")
         }else{
             history.push('/login')

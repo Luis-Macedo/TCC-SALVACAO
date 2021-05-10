@@ -1,25 +1,25 @@
-export {};
-
-const Validator = require('fastest-validator')
-const services = require("./services")
-const Boom = require('boom')
-
-const v = new Validator()
+import * as Yup from 'yup';
+const model = require('./model');
 
 module.exports = {
-    create: async ctx =>{
-        const { request: {body}, response } = ctx
-        const schema = {
-           latitude: {max: 10, min: 10, type: 'decimal'},
-           longitude: {max: 10, min: 10, type: 'decimal'}
-        }
-        const error = v.validate(body, schema)
 
-        if(Array.isArray(error) && error.length){
-            response.status = 400
-            return response.body = Boom.badRequest(null, error)
+    insertAnimal: async ctx => {
+        const { request: {body}, response } = ctx
+        console.log(body)
+        
+        const latitude = body.latitude;
+        const longitude = body.longitude;
+        const descricao = body.descricao;
+
+        const animal = await model.insertAnimal(latitude, longitude, descricao);
+
+        if(animal){
+            response.body={
+               mensagem: "Deu certo"
+            }
+        }else{
+           console.log("ainda não")
         }
-        const animal = await services.create(body)
-        response.body = animal
+
     }
 }
