@@ -5,14 +5,15 @@ import * as FaIcons from 'react-icons/fa';
 import { FiPlus } from "react-icons/fi";
 import MapGL, {Marker, MapEvent} from 'react-map-gl';
 import api from '../../../services/api';
-
+import { history } from '../../App/history';
 
 const Pets = () => {
 
     const [position, setPosition] = useState({latitude: 0, longitude: 0});
-    const [images, setImages] = useState<File[]>([]);
+    const [image, setImage] = useState<File[]>([]);
     const [previewImages, setPreviewImages] = useState<string[]>([]);
     const [descricao, setDescricao] = useState('');
+    const [titulo, setTitulo] = useState('');
 
     const[viewPort, setViewPort] = useState({
         latitude: -22.2092052,
@@ -30,7 +31,6 @@ const Pets = () => {
                 longitude: lng
             }
         );
-
         return [lng, lat]
     }
 
@@ -42,7 +42,7 @@ const Pets = () => {
     
         const selectedImages = Array.from(event.target.files);
     
-        setImages(selectedImages);
+        setImage(selectedImages);
     
         const selectedImagesPreview = selectedImages.map(image => {
           return URL.createObjectURL(image);
@@ -56,31 +56,29 @@ const Pets = () => {
 
         const dados = {
             latitude: position.latitude, 
-            longitude: position.longitude, 
-            descricao: descricao
+            longitude: position.longitude,
+            titulo: titulo, 
+            descricao: descricao,
         }
+
         await api.post('/pets', dados).then(res => {
             const { data } = res
             console.log(data)
             if(data){
-                alert(`Animal cadastrado ${data}`)
+                alert(`Animal cadastrado`);
+                history.push('/map');
+                window.location.reload();
             }
         })
-        .catch(err => alert(`Login não pôde ser efetuado: ${err}`));
-    
+        .catch(err => alert(`Animal não cadastrado: ${err}`));
     }
 
     return(
 
         <div className="containerpets">
-
             <div className="corpo">
-                
-
                 <div className="form">
-                
                     <form onSubmit={handleSubmit} className="formulario">
-
                         <div className="mapa">
                             <MapGL 
                                 {...viewPort}
@@ -105,6 +103,14 @@ const Pets = () => {
 
                         <div className="esquerda">
                             <label htmlFor="descricao">Descrição do caso</label>
+                            <input
+                                placeholder="Título do caso"
+                                name="titulo"
+                                className="titulo"
+                                id="titulo"
+                                value={titulo}
+                                onChange={event => setTitulo(event.target.value)}
+                            />
                             <textarea
                                 placeholder="Descrição"
                                 name="descricao"
@@ -113,12 +119,6 @@ const Pets = () => {
                                 value={descricao}
                                 onChange={event => setDescricao(event.target.value)}
                             />
-                            <input
-                                type="date"
-                                name="data"
-                                className="data"
-                                datatype="aaaa/mm/dd"
-                            />
                         </div>
                         
                         <div className="direita">
@@ -126,39 +126,31 @@ const Pets = () => {
                             <label htmlFor="foto">Selecione uma foto</label>
                             <div className="input-block">
 
-                            <div className="images-container">
+                                <div className="images-container">
 
-                                {previewImages.map(image => {
-                                return(
-                                    <img key={image} src={image} alt={`${name}`}/>
-                                )
-                                })}
-                                <label htmlFor="image[]" className="new-image">
-                                    <FiPlus size={50} color="#15b6d6" />
-                                </label>
+                                    {previewImages.map(image => {
+                                    return(
+                                        <img key={image} src={image} alt={`${name}`}/>
+                                    )
+                                    })}
+                                    <label htmlFor="image[]" className="new-image">
+                                        <FiPlus size={50} color="#15b6d6" />
+                                    </label>
 
-                                
+                                    
+                                </div>
+                                <input onChange={handleSelectImages} type="file" id='image[]'/>
                             </div>
-
-                            <input multiple onChange={handleSelectImages} type="file" id='image[]'/>
-                            
-
-                        </div>
 
                             <div className="btn-relatar">
                                 <button type="submit">Relatar</button>
                             </div>
                         </div>
-
-                        
                     </form>
-                    
                 </div>
-                
             </div>
-            
         </div>
     )
 }
 
-export default Pets
+export default Pets;

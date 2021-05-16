@@ -56,7 +56,7 @@
     align-items: center;
 }
 
-.btn-relatar, .foto, .descricao, .data{
+.btn-relatar, .foto, .descricao, .titulo{
     margin: 10px;
 }
 
@@ -74,9 +74,10 @@
     border-radius: 5px;
 }
 
-.data{
+.titulo{
     width: 100%;
     height: 15%;
+    padding: 2%;
     border: 2px solid rgba(0, 0, 0, 0.651);
     border-radius: 5px;
 }

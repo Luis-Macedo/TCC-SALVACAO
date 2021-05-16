@@ -1,17 +1,16 @@
-import * as Yup from 'yup';
-const model = require('./model');
+const animalModel = require('./model');
 
 module.exports = {
 
     insertAnimal: async ctx => {
         const { request: {body}, response } = ctx
-        console.log(body)
         
         const latitude = body.latitude;
         const longitude = body.longitude;
+        const titulo = body.titulo;
         const descricao = body.descricao;
 
-        const animal = await model.insertAnimal(latitude, longitude, descricao);
+        const animal = await animalModel.insertAnimal(latitude, longitude, titulo, descricao);
 
         if(animal){
             response.body={
@@ -20,6 +19,14 @@ module.exports = {
         }else{
            console.log("ainda não")
         }
+    },
 
+    getAnimais: async ctx => {
+        const {request: {body}, response} = ctx
+
+        const animais = await animalModel.getAnimais();
+        if(animais){
+            response.body = animais
+        }
     }
 }

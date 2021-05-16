@@ -1,10 +1,18 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import * as FaIcons from 'react-icons/fa';
 import './style/Mapa.css';
 import ReactMapGL, { Marker } from 'react-map-gl';
 import { Link } from 'react-router-dom';
-import { history } from '../../App/history'
+import { history } from '../../App/history';
+import api from '../../../services/api';
 
+interface Animal{
+    id: number;
+    latitude: number;
+    longitude: number;
+    titulo: string;
+    descricao: string;
+}
 
 function Mapa(){
 
@@ -13,7 +21,7 @@ function Mapa(){
         longitude: -49.9585247,
         width: '100vw',
         height: '90vh',
-        zoom: 12
+        zoom: 10
     });
 
     const validarLogin = () =>{
@@ -25,6 +33,14 @@ function Mapa(){
         }
     }
 
+    const [animais, setAnimais] = useState<Animal[]>([]);
+
+    useEffect(() => {
+        api.get('/pets/list').then(response =>{
+            setAnimais(response.data)
+        });
+    }, []);
+
     return(
         <div id="page-map">
             <ReactMapGL 
@@ -34,12 +50,20 @@ function Mapa(){
                     setViewPort(viewPort);
                 }}
             >
-
-                <Marker
-                    latitude={-22.2130026} longitude = {-49.9585247} offsetLeft={-25} offsetTop={-50}
-                >
-                    <FaIcons.FaMapMarker size={45} color={`#f36229`}/>
-                </Marker>
+                {animais.map(animal =>{
+                    return(
+                        <Marker
+                            key={animal.id}
+                            latitude={animal.latitude} 
+                            longitude = {animal.longitude} 
+                            offsetLeft={-25} 
+                            offsetTop={-50}
+                        >
+                            <FaIcons.FaMapMarker size={45} color={`#f36229`}/>
+                        </Marker>
+                    )
+                })}
+                
 
                 <Link to="/pets">
                     <button className="btn"><img srcSet="/images/logopata.png" alt="" onClick={validarLogin}/></button>
