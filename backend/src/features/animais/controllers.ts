@@ -1,32 +1,42 @@
+import { Request, Response } from 'express';
+
 const animalModel = require('./model');
 
-module.exports = {
+export default{
 
-    insertAnimal: async ctx => {
-        const { request: {body}, response } = ctx
-        
-        const latitude = body.latitude;
-        const longitude = body.longitude;
-        const titulo = body.titulo;
-        const descricao = body.descricao;
+    async create(request: Request, response: Response){
 
-        const animal = await animalModel.insertAnimal(latitude, longitude, titulo, descricao);
+        const{
+            latitude,
+            longitude,
+            titulo,
+            descricao
+        } = request.body
+
+        //importando o nome da foto para colocar no banco de dados
+        const requestImages = request.files as Express.Multer.File[];
+        const [images] = requestImages.map(image => {
+            return {path: image.filename}
+        });
+
+        //convertendo latitude e longitude 
+        const TrueLatitude = parseFloat(latitude)
+        const TrueLongitude = parseFloat(longitude)
+
+        console.log(TrueLatitude);
+
+        const animal = await animalModel.insertAnimal(TrueLatitude, TrueLongitude, titulo, descricao, images);
 
         if(animal){
-            response.body={
-               mensagem: "Deu certo"
-            }
+            console.log("deu certo")
         }else{
-           console.log("ainda não")
+            console.log("deu ruim")
         }
     },
 
-    getAnimais: async ctx => {
-        const {request: {body}, response} = ctx
+    async list(request: Request, response: Response){
 
-        const animais = await animalModel.getAnimais();
-        if(animais){
-            response.body = animais
-        }
+        const pets = await animalModel.getAnimais();
+        response.send(pets)
     }
 }

@@ -54,23 +54,16 @@ const Pets = () => {
     async function handleSubmit(event: FormEvent<HTMLFormElement>){
         event.preventDefault();
 
-        const dados = {
-            latitude: position.latitude, 
-            longitude: position.longitude,
-            titulo: titulo, 
-            descricao: descricao,
-        }
+        const data = new FormData();
 
-        await api.post('/pets', dados).then(res => {
-            const { data } = res
-            console.log(data)
-            if(data){
-                alert(`Animal cadastrado`);
-                history.push('/map');
-                window.location.reload();
-            }
-        })
-        .catch(err => alert(`Animal não cadastrado: ${err}`));
+        data.append('foto', image[0]);
+        data.append('titulo', titulo);
+        data.append('descricao', descricao);
+        data.append('latitude', String(position.latitude));
+        data.append('longitude', String(position.longitude));
+        console.log(data.get('foto'))
+
+        await api.post('/pets', data);
     }
 
     return(

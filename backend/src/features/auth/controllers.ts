@@ -1,26 +1,30 @@
+import { Request, Response } from "express";
+
 const Boom = require('boom');
 const model = require('./model');
 
-module.exports = {
-    auth: async ctx => {
-        
-        const { request: {body}, response } = ctx
+export default{
+    async auth(request: Request, response: Response){
 
-        const email = body.email;
-        const senha = body.senha;
-
+        const{
+            email,
+            senha
+        } = request.body
         
         const [users] = await model.authUser(email, senha);
         
         if(users){
-            response.body = {
-                email: users.email,
-                nome: users.nome,
-                id: users.id
-            }
+            return (
+                response.json(
+                    {
+                        id: users.id,
+                        email: users.email,
+                        nome: users.nome
+                    }
+                )
+            )
         }else{
-            response.status = 401
-            response.body = {result: Boom.unauthorized()}
+            return
         }
     }
 }

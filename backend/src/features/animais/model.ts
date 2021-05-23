@@ -1,10 +1,10 @@
 const conexaoAnimal = require('../../database/connection');
 
-async function insertAnimal(latitude, longitude, titulo, descricao){
+async function insertAnimal(latitude, longitude, titulo, descricao, foto){
     const conn = await conexaoAnimal.connect();
 
-    const sql = 'INSERT INTO animais(latitude, longitude, titulo, descricao, data_relato) VALUES(?, ?, ?, ?, CURRENT_DATE);'
-    const values = [latitude, longitude, titulo, descricao];
+    const sql = 'INSERT INTO animais(latitude, longitude, titulo, descricao, foto, data_relato) VALUES(?, ?, ?, ?, ?, CURRENT_DATE);'
+    const values = [latitude, longitude, titulo, descricao, foto.path];
     const rows = await conn.query(sql, values);
     return rows;
 }

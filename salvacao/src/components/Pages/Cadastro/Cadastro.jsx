@@ -14,8 +14,7 @@ const Cadastro = () => {
     })
 
     const handleFormSubmit = values =>{
-        
-        
+
         api.post("/create/user", values).then(res => {
             const { data } = res
             console.log(data)
@@ -78,7 +77,6 @@ const Cadastro = () => {
                         </div>
                     </div>
                 </Form>
-                
             </Formik>
         </div>
     )
