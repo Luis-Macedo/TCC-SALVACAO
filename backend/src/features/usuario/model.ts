@@ -8,4 +8,12 @@ async function createUser(nome, email, senha){
     return rows;
 }
 
-module.exports = {createUser};
+async function updatePassword(email, senha) {
+    const conn = await conexaoCreate.connect();
+    const sql = 'UPDATE usuarios SET senha = ? WHERE email = ?;'
+    const values = [senha, email];
+    const rows = await conn.query(sql, values);
+    return rows;
+}
+
+module.exports = {createUser, updatePassword};

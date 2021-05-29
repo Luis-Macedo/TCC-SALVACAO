@@ -9,6 +9,8 @@ import Login from '../Pages/Login/Login';
 import Profile from '../Pages/Profile/Profile';
 import Cadastro from '../Pages/Cadastro/Cadastro';
 import Pets from '../Pages/Pets/Pets';
+import Password from '../Pages/Password/Password';
+import Pet from '../Pages/Pets/Pet';
 
 
 const App = () => (
@@ -22,6 +24,8 @@ const App = () => (
       <Route component={Profile} exact path="/profile"/>
       <Route component={Cadastro} exact path="/cadastro"/>
       <Route component={Pets} exact path="/pets" />
+      <Route component={Password} exact path="/password"/>
+      <Route component={Pet} exact path="/pet:id"/>
     </Switch>
   </Router>
     

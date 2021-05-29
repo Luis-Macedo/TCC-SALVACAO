@@ -15,7 +15,7 @@ const Cadastro = () => {
 
     const handleFormSubmit = values =>{
 
-        api.post("/create/user", values).then(res => {
+        api.post("/user/create", values).then(res => {
             const { data } = res
             console.log(data)
             if(data){
@@ -24,7 +24,7 @@ const Cadastro = () => {
                 window.location.reload()
             }
         })
-        .catch(err => alert(`Cadastro não pôde ser efetuado: Email já cadastrado`));
+        .catch(err => alert(`Cadastro não pôde ser efetuado: Email já cadastrado ${err}`));
     }
 
     return(

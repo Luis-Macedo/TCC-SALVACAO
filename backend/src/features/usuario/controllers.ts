@@ -1,4 +1,3 @@
-import { create } from "domain";
 import { Request, Response } from "express";
 
 export {};
@@ -24,6 +23,26 @@ export default{
             console.log('Usuário Cadastrado')
         }else{
             console.log('deu ruim')
+        }
+    },
+
+    async redefine(request: Request, response: Response){
+        
+        const{
+            email,
+            senha
+        } = request.body
+
+        console.log(email)
+
+        const user = await model.updatePassword(email, senha);
+
+        if(user){
+            response.json({
+                mensagem: "Senha redefinida"
+            })
+        }else{
+            console.log("Deu ruim")
         }
     }
 }

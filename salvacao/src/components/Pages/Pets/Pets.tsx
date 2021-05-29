@@ -61,9 +61,16 @@ const Pets = () => {
         data.append('descricao', descricao);
         data.append('latitude', String(position.latitude));
         data.append('longitude', String(position.longitude));
-        console.log(data.get('foto'))
 
-        await api.post('/pets', data);
+        await api.post('/pets', data).then(res => {
+            if(res){
+                alert("Cadastro efetuado!")
+                history.push("/map");
+                window.location.reload()
+            }else{
+                alert("Cadastro não efetuado")
+            }
+        });
     }
 
     return(

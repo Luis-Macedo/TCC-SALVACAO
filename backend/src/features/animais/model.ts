@@ -17,4 +17,14 @@ async function getAnimais(){
     return rows;
 }
 
-module.exports = {insertAnimal, getAnimais};
+async function getAnimal(id){
+
+    const conn = await conexaoAnimal.connect();
+
+    const sql = 'SELECT * FROM animais WHERE id = ?';
+    const values = [id]
+    const [rows] = await conn.query(sql, values);
+    return rows;
+}
+
+module.exports = {insertAnimal, getAnimais, getAnimal};

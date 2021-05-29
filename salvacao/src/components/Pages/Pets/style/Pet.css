@@ -1,0 +1,48 @@
+.mapaPet{
+    width: 100%;
+    height: 35%;
+    margin-bottom: 1%;
+    border-radius: 10px;
+    overflow-y: hidden;
+    border: 2px solid rgba(0, 0, 0, 0.651);
+    
+}
+
+.conteudo{
+    width: 80%;
+    height: 100vh;
+    margin: auto;
+    padding: 2%;
+    background-color: rgba(255, 255, 255, 0.450);
+    border: 2px solid rgba(0, 0, 0, 0.600);
+    border-radius: 5px;
+    box-shadow: 0 8px rgba(230, 102, 28, 0.349);
+}
+
+.Infos{
+    width: 100%;
+    height: 65%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.imagemAnimal{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    width: 200px;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.imagemAnimal img{
+    width: 100%;
+    height: 100%;
+}
+
+h1, h2, h3, h4, .imagemAnimal{
+    margin-top: 1%;
+}

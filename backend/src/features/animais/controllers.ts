@@ -23,12 +23,12 @@ export default{
         const TrueLatitude = parseFloat(latitude)
         const TrueLongitude = parseFloat(longitude)
 
-        console.log(TrueLatitude);
-
         const animal = await animalModel.insertAnimal(TrueLatitude, TrueLongitude, titulo, descricao, images);
 
         if(animal){
-            console.log("deu certo")
+            response.json({
+                mensagem: "Cadastro do caso concuído"
+            })
         }else{
             console.log("deu ruim")
         }
@@ -38,5 +38,16 @@ export default{
 
         const pets = await animalModel.getAnimais();
         response.send(pets)
+    },
+
+    async listOne(request: Request, response: Response){
+
+        const {id} = request.params;
+
+        const [pet] = await animalModel.getAnimal(id);
+
+        pet.foto = `http://localhost:3001/uploads/${pet.foto}`
+        console.log(pet)
+        return response.json(pet)
     }
 }

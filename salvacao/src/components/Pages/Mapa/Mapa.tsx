@@ -52,15 +52,18 @@ function Mapa(){
             >
                 {animais.map(animal =>{
                     return(
-                        <Marker
-                            key={animal.id}
-                            latitude={animal.latitude} 
-                            longitude = {animal.longitude} 
-                            offsetLeft={-25} 
-                            offsetTop={-50}
-                        >
-                            <FaIcons.FaMapMarker size={45} color={`#f36229`}/>
-                        </Marker>
+                        <Link to={`/pet${animal.id}`}>
+                        
+                            <Marker
+                                key={animal.id}
+                                latitude={animal.latitude} 
+                                longitude = {animal.longitude} 
+                                offsetLeft={-25} 
+                                offsetTop={-50}
+                            >
+                                <FaIcons.FaMapMarker size={45} color={`#f36229`} cursor="pointer"/>
+                            </Marker>
+                        </Link>
                     )
                 })}
                 

@@ -18,7 +18,6 @@ const Login = () => {
         
         api.post("/login", values).then(res => {
             const { data } = res
-            console.log(data)
             if(data){
                 alert("Login efetuado com sucesso")
                 sessionStorage.setItem("id", data.id);
@@ -63,8 +62,8 @@ const Login = () => {
                             <button className="cadastro-login" type="submit">Login</button>
                         </div>
                         
-                        <Link className="linkcad" to="/">
-                            <button className="cadastro">Esqueci a senha</button>
+                        <Link className="linkcad" to="/password">
+                            <button className="cadastro">Redefinir senha</button>
                         </Link>
                             
                         
