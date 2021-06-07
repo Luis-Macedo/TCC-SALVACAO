@@ -28,12 +28,5 @@ export const NavbarData = [
         path: '/profile',
         icon: <FaIcons.FaUserAlt/>,
         cName: 'nav-text'
-    },
-    {
-        title: 'Instituições',
-        path: '/institution',
-        icon: <FaIcons.FaHospitalAlt/>,
-        cName: 'nav-text'
     }
-    
 ]

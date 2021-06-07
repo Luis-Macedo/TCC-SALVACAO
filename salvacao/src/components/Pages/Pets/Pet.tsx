@@ -52,12 +52,9 @@ export default function Pet(){
             <div className="conteudo">
                 <div className="mapaPet">
                     <MapGL 
-                        {...viewPort}
-                        
+                        {...viewPort} 
                         mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
                     >
-                        
-                        
                         <Marker
                             key={animal.id}
                             latitude={animal.latitude} 
@@ -67,8 +64,6 @@ export default function Pet(){
                         >
                             <FaIcons.FaMapMarker size={45} color={`#f36229`}/>
                         </Marker>
-                        
-
                     </MapGL>
                 </div>
 
