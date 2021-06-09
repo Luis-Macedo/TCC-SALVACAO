@@ -2,10 +2,10 @@
     overflow-x: hidden;
 }
 
-form{
+.teste{
     width: 80%;
     margin: auto;
-    height: 100vh;
+    height: 1500px;
     border: 2px solid rgba(0, 0, 0, 0.600);
     border-radius: 5px;
     background-color: rgba(255, 255, 255, 0.3);
@@ -22,17 +22,17 @@ form{
 .inputs2{
     align-items: center;
     justify-content: center;
-    height: 75%;
+    height: 80%;
     margin: 20px;
 }
 
-.passwd2, .name2, .email2{
+.passwd2, .name2, .email2, .endereco, .cidade, .estado, .telefone{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 20%;
+    height: 12%;
     margin-top: 15px;
     overflow-y: hidden;
     background-color: rgba(255, 255, 255, 0.450);
@@ -47,15 +47,15 @@ form{
     justify-content: center;
     border: 2px solid rgba(0, 0, 0, 0.600);
     border-radius: 5px;
-    height: 15%;
+    height: 12%;
     margin: 0 8%;
     background-color: rgba(255, 255, 255, 0.450);
     box-shadow: 0 8px rgba(230, 102, 28, 0.349);
 }
 
-.passwd2 input, .name2 input, .email2 input, .rg input{
+.passwd2 input, .name2 input, .email2 input, .cidade input, .telefone input, .endereco input, .estado input{
     width: 90%;
-    height: 35%;
+    height: 45%;
     padding: 10px;
     border: 2px solid rgba(0, 0, 0, 0.600);
     border-radius: 5px;
@@ -99,12 +99,8 @@ form{
 
 @media screen and (max-width: 720px){
 
-    .inputs2{
-        height: 70%;
-    }
-
     .botao2{
-        height: 15%;
+        height: 10%;
     }
 
     .linkcad2{

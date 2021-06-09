@@ -10,7 +10,11 @@ const Cadastro = () => {
     const validations = Yup.object().shape({
         nome: Yup.string().required(),
         email: Yup.string().email().required(),
-        senha: Yup.string().min(4).required()
+        senha: Yup.string().min(4).required(),
+        endereco: Yup.string(),
+        cidade: Yup.string(),
+        estado: Yup.string().max(2),
+        telefone: Yup.string()
     })
 
     const handleFormSubmit = values =>{
@@ -34,7 +38,7 @@ const Cadastro = () => {
                 initialValues={{}}
                 validationSchema={validations}
             >
-                <Form>
+                <Form className='teste'>
                     <div className="inputs2">
                         <div className="name2">
                             <Field
@@ -61,12 +65,35 @@ const Cadastro = () => {
                             />
                         </div>
 
-                        <div className="passwd2">
+                        <div className="endereco">
                             <Field
                                 className="input2"
-                                placeholder="Confirme sua senha"
-                                name="senha2"
-                                type="password"
+                                placeholder="Digite seu endereço"
+                                name="endereco"
+                            />
+                        </div>
+
+                        <div className="cidade">
+                            <Field
+                                className="input2"
+                                placeholder="Digite sua cidade"
+                                name="cidade"
+                            />
+                        </div>
+
+                        <div className="estado">
+                            <Field
+                                className="input2"
+                                placeholder="Digite seu estado"
+                                name="estado"
+                            />
+                        </div>
+
+                        <div className="telefone">
+                            <Field
+                                className="input2"
+                                placeholder="Digite seu telefone"
+                                name="telefone"
                             />
                         </div>
                     </div>

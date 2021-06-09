@@ -28,7 +28,6 @@ export default function Pet(){
     useEffect(() => {
         api.get(`pets/list/one/${params.id}`).then(response => {
           setAnimal(response.data);
-          
         });
     }, [params.id]);
     console.log(animal)

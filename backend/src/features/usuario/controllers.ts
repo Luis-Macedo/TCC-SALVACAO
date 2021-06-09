@@ -9,12 +9,15 @@ export default{
         const{
             nome,
             email,
-            senha
+            senha,
+            endereco,
+            cidade,
+            estado
         } = request.body
 
         console.log(nome)
 
-        const user = await model.createUser(nome, email, senha);
+        const user = await model.createUser(nome, email, senha, endereco, cidade, estado);
         
         if(user){
             response.json({
@@ -43,6 +46,19 @@ export default{
             })
         }else{
             console.log("Deu ruim")
+        }
+    },
+
+    async listOne(request: Request, response: Response){
+
+        const {
+            id
+        } = request.params;
+
+        const [user] = await model.listOne(id);
+
+        if(user){
+            response.send(user)
         }
     }
 }

@@ -30,7 +30,7 @@ export default function Password(){
     return(
         <div className="container">
 
-            <form onSubmit={handleSubmit} className="redefinir">
+            <form onSubmit={handleSubmit} className="redefinir teste3">
                 
                 <div className="inputs1">
                     <div className="input">

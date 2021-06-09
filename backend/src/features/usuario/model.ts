@@ -1,9 +1,9 @@
 const conexaoCreate = require('../../database/connection');
 
-async function createUser(nome, email, senha){
+async function createUser(nome, email, senha, endereco, cidade, estado){
     const conn = await conexaoCreate.connect();
-    const sql = 'INSERT INTO usuarios(nome, email, senha) VALUES(?, ?, ?);'
-    const values = [nome, email, senha];
+    const sql = 'INSERT INTO usuarios(nome, email, senha, endereco, cidade, estado) VALUES(?, ?, ?, ?, ?, ?);'
+    const values = [nome, email, senha, endereco, cidade, estado];
     const rows = await conn.query(sql, values);
     return rows;
 }
@@ -16,4 +16,12 @@ async function updatePassword(email, senha) {
     return rows;
 }
 
-module.exports = {createUser, updatePassword};
+async function listOne(id){
+    const conn = await conexaoCreate.connect();
+    const sql = 'SELECT * FROM usuarios WHERE id = ?;'
+    const values = [id];
+    const [rows] = await conn.query(sql, values);
+    return rows;
+}
+
+module.exports = {createUser, updatePassword, listOne};
