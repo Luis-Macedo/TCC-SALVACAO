@@ -12,12 +12,13 @@ export default{
             senha,
             endereco,
             cidade,
-            estado
+            estado,
+            telefone
         } = request.body
 
         console.log(nome)
 
-        const user = await model.createUser(nome, email, senha, endereco, cidade, estado);
+        const user = await model.createUser(nome, email, senha, endereco, cidade, estado, telefone);
         
         if(user){
             response.json({

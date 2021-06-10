@@ -24,7 +24,14 @@ export default function Profile(){
     });
 
     if(!user){
-        return <p>Carregando...</p>
+        return (
+            <div className="container">
+
+                <div style={{display: 'flex', margin: 'auto'}}>
+                    <p style={{margin: 'auto'}}>Não há perfil logado</p>
+                </div>
+            </div>
+        )
     }
 
     return(
@@ -41,16 +48,16 @@ export default function Profile(){
                         <input type="text" name="email" id="email" placeholder={user.email ? user.email : 'Email do usuário'}disabled/>
 
                         <label htmlFor="endereco">Endereço: </label>
-                        <input type="text" name="endereco" id="endereco" placeholder={user.endereco ? user.endereco : 'Endereco do usuário'}disabled/>
+                        <input type="text" name="endereco" id="endereco" placeholder={user.endereco ? user.endereco : 'USUÁRIO NÃO DECLAROU ENDEREÇO'}disabled/>
 
                         <label htmlFor="city">Cidade: </label>
-                        <input type="text" name="city" id="city" placeholder={user.cidade ? user.cidade : 'Cidade do usuário'} disabled/>
+                        <input type="text" name="city" id="city" placeholder={user.cidade ? user.cidade : 'USUÁRIO NÃO DECLAROU CIDADE'} disabled/>
 
                         <label htmlFor="state">Estado: </label>
-                        <input type="text" name="state" id="state" placeholder={user.estado ? user.estado : 'estado do usuario'} disabled/>
+                        <input type="text" name="state" id="state" placeholder={user.estado ? user.estado : 'USUÁRIO NÃO DECLAROU ESTADO'} disabled/>
 
                         <label htmlFor="telephone">Telefone: </label>
-                        <input type="text" name="telephone" id="telephone" placeholder={user.telefone ? user.telefone : 'telefone do usuario'} disabled/>
+                        <input type="text" name="telephone" id="telephone" placeholder={user.telefone ? user.telefone : 'USUÁRIO NÃO DECLAROU TELEFONE'} disabled/>
                     </div>
                 </div>
             </div>

@@ -36,7 +36,7 @@ export default function Password(){
                     <div className="input">
                         <label htmlFor="email">Digite seu email</label>
                         <input 
-                            type="email" 
+                            type="text" 
                             name="email" 
                             id="email" 
                             className="email"
