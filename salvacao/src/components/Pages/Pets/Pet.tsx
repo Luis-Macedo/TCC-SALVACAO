@@ -72,10 +72,15 @@ export default function Pet(){
                         <img src={`${animal.foto}`} alt=""/>
                     </div>
                     
-                    <h1>Título do Relato: {animal.titulo}</h1>
+                    <div className="titulo-relato">
+                        <label htmlFor="titulo">Relato:</label>
+                        <input type="text" name="titulo" placeholder={animal.titulo} disabled/>
+                    </div>
                     
-                    <h3>Descrição do caso:</h3>
-                    <h4>{animal.descricao}</h4>
+                    <div className="descricao-relato">
+                        <label htmlFor="descricao"> Descrição do relato:</label>
+                        <textarea name="descricao" className="text-descricao" id="" placeholder={animal.descricao}></textarea>
+                    </div>
                     
                     <h3>Relatado em: {dataAnimal}</h3>
                 </div>

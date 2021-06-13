@@ -7,7 +7,7 @@ function Home(){
         <div className="container">
             <div className="card">
                 <div className="cardHead">
-                    <img srcSet="/images/logosalvacao.png" alt=""/>
+                    <img className="imghome" srcSet="/images/logosalvacao.png" alt=""/>
                 </div>
 
                 <div className="cardBody">

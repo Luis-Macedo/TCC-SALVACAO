@@ -40,14 +40,15 @@ const Login = () => {
                 <Form className="teste2">
                     <div className="inputs">
                         <div className="user">
+                            <label htmlFor="email">Digite seu email:</label>
                             <Field
                                 className="input"
                                 placeholder="Digite seu email"
                                 name="email"
                             />
-                            
                         </div>
                         <div className="passwd">
+                            <label htmlFor="senha">Digite sua senha:</label>
                             <Field
                                 type="password"
                                 className="input"

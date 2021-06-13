@@ -41,6 +41,7 @@ const Cadastro = () => {
                 <Form className='teste'>
                     <div className="inputs2">
                         <div className="name2">
+                            <label htmlFor="nome">Nome completo:</label>
                             <Field
                                 className="input2"
                                 placeholder="Digite seu nome"
@@ -49,6 +50,7 @@ const Cadastro = () => {
                         </div>
                         
                         <div className="email2">
+                            <label htmlFor="email">Seu email:</label>
                             <Field
                                 className="input2"
                                 placeholder="Digite seu email"
@@ -57,6 +59,7 @@ const Cadastro = () => {
                         </div>
 
                         <div className="passwd2">
+                            <label htmlFor="senha">Digite sua senha:</label>
                             <Field
                                 className="input2"
                                 placeholder="Digite sua senha"
@@ -66,6 +69,7 @@ const Cadastro = () => {
                         </div>
 
                         <div className="endereco">
+                            <label htmlFor="endereco">Seu endereço:</label>
                             <Field
                                 className="input2"
                                 placeholder="Digite seu endereço"
@@ -74,6 +78,7 @@ const Cadastro = () => {
                         </div>
 
                         <div className="cidade">
+                            <label htmlFor="cidade">Digite a sua cidade:</label>
                             <Field
                                 className="input2"
                                 placeholder="Digite sua cidade"
@@ -82,6 +87,7 @@ const Cadastro = () => {
                         </div>
 
                         <div className="estado">
+                            <label htmlFor="estado">Escolha seu Estado:</label>
                             <Field
                                 className="input2"
                                 placeholder="Digite seu estado"
@@ -90,6 +96,7 @@ const Cadastro = () => {
                         </div>
 
                         <div className="telefone">
+                            <label htmlFor="telefone">Digite seu telefone:</label>
                             <Field
                                 className="input2"
                                 placeholder="Digite seu telefone"

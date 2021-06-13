@@ -36,12 +36,13 @@ export default function Password(){
                     <div className="input">
                         <label htmlFor="email">Digite seu email</label>
                         <input 
-                            type="text" 
+                            type="email" 
                             name="email" 
                             id="email" 
                             className="email"
                             required
                             value={email}
+                            placeholder="Digite deu email"
                             onChange={event => setEmail(event.target.value)}
                         />
                     </div>
@@ -55,6 +56,7 @@ export default function Password(){
                             className="senha"
                             required
                             value={senha}
+                            placeholder="Digite a sua senha"
                             onChange={event => setSenha(event.target.value)}
                         />
                     </div>

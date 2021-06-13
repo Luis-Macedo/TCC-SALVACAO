@@ -28,15 +28,20 @@
     height: 90%;
 }
 
+.infoContent label{
+    font-weight: 700;
+}
+
 .infoContent input{
     border: none;
     height: 8%;
     background: transparent;
     color: black;
+    font-weight: 700;
     border-bottom: 2px solid black;
 }
 
-.infoContent input, label{
+.infoContent label{
     margin-top: 2%;
 }
 

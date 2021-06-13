@@ -45,10 +45,10 @@ export default function Profile(){
                         <input type="text" name="nome" id="nome" placeholder={user.nome ? user.nome : 'Nome do usuario'} disabled/>
 
                         <label htmlFor="email">Email: </label>
-                        <input type="text" name="email" id="email" placeholder={user.email ? user.email : 'Email do usuário'}disabled/>
+                        <input type="text" name="email" id="email" placeholder={user.email ? user.email : 'Email do usuário'} disabled/>
 
                         <label htmlFor="endereco">Endereço: </label>
-                        <input type="text" name="endereco" id="endereco" placeholder={user.endereco ? user.endereco : 'USUÁRIO NÃO DECLAROU ENDEREÇO'}disabled/>
+                        <input type="text" name="endereco" id="endereco" placeholder={user.endereco ? user.endereco : 'USUÁRIO NÃO DECLAROU ENDEREÇO'} disabled/>
 
                         <label htmlFor="city">Cidade: </label>
                         <input type="text" name="city" id="city" placeholder={user.cidade ? user.cidade : 'USUÁRIO NÃO DECLAROU CIDADE'} disabled/>

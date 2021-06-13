@@ -24,6 +24,10 @@
     justify-content: center;
     height: 80%;
     margin: 20px;
+    background-color: rgba(255, 255, 255, 0.450);
+    border: 2px solid rgba(0, 0, 0, 0.600);
+    border-radius: 5px;
+    box-shadow: 0 8px rgba(230, 102, 28, 0.349);
 }
 
 .passwd2, .name2, .email2, .endereco, .cidade, .estado, .telefone{
@@ -35,10 +39,6 @@
     height: 12%;
     margin-top: 15px;
     overflow-y: hidden;
-    background-color: rgba(255, 255, 255, 0.450);
-    border: 2px solid rgba(0, 0, 0, 0.600);
-    border-radius: 5px;
-    box-shadow: 0 8px rgba(230, 102, 28, 0.349);
 }
 
 .botao2{
@@ -48,7 +48,7 @@
     border: 2px solid rgba(0, 0, 0, 0.600);
     border-radius: 5px;
     height: 12%;
-    margin: 0 8%;
+    margin: 5% 8% 0;
     background-color: rgba(255, 255, 255, 0.450);
     box-shadow: 0 8px rgba(230, 102, 28, 0.349);
 }
@@ -76,12 +76,6 @@
     transition: all 850ms;
 }
 
-.passwd2 label, .name2 label, .email2 label, .rg label{
-    text-transform: uppercase;
-    margin-right: auto;
-    padding-left: 5%;
-}
-
 .linkcad2{
     display: flex;
     margin: auto;
@@ -101,6 +95,7 @@
 
     .botao2{
         height: 10%;
+        margin: 25% 8% 0;
     }
 
     .linkcad2{
