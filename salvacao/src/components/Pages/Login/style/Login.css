@@ -70,6 +70,14 @@
     border-radius: 5px;
 }
 
+.user input:placeholder-shown, .passwd input:placeholder-shown{
+    font-weight: 700;
+}
+
+.user label, .passwd label{
+    font-weight: 700;
+}
+
 .cadastro, .cadastro-login{
     width: 100%;
     height: 100%;
@@ -77,6 +85,7 @@
     border: 2px solid rgba(0, 0, 0, 0.600);
     cursor: pointer;
     text-transform: uppercase;
+    font-weight: 700;
 }
 
 .linkcad{
@@ -126,6 +135,7 @@
 
     .cadastro, .cadastro-login{
         margin: 5%;
+        height: 90%;
     }
 
 }

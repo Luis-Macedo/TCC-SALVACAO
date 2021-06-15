@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: column;
     margin: auto;
-    
+    box-shadow: 8px 8px rgba(230, 102, 28, 0.349);
     border-radius: 10px;
 }
 
@@ -30,7 +30,6 @@
     width: 100%;
     height: 100%;
     display: flex;
-    box-shadow: 8px 8px rgba(230, 102, 28, 0.349);
 }
 
 .formulario{
@@ -54,6 +53,16 @@
     padding: 0 10%;
     justify-content: center;
     align-items: center;
+}
+
+.direita label, .esquerda label{
+    font-weight: 700;
+}
+
+.direita input:placeholder-shown, 
+.esquerda input:placeholder-shown,
+.esquerda textarea:placeholder-shown{
+    font-weight: 700;
 }
 
 .btn-relatar, .foto, .descricao, .titulo{
@@ -97,6 +106,7 @@
     border-radius: 5px;
     border: 2px solid rgba(0, 0, 0, 0.651);
     text-transform: uppercase;
+    font-weight: 700;
 }
 
 
@@ -132,7 +142,7 @@ input[type=file]{
     height: 100%;
     width: 100%;
     background: transparent;
-    border: 1px dashed #96D2F0;
+    border: 1px dashed #f36229;
     border-radius: 20px;
     cursor: pointer;
   

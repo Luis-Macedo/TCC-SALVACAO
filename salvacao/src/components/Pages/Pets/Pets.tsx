@@ -134,12 +134,12 @@ const Pets = () => {
                                     )
                                     })}
                                     <label htmlFor="image[]" className="new-image">
-                                        <FiPlus size={50} color="#15b6d6" />
+                                        <FiPlus size={50} color="#f36229" />
                                     </label>
 
                                     
                                 </div>
-                                <input onChange={handleSelectImages} type="file" id='image[]'/>
+                                <input onChange={handleSelectImages} type="file" id='image[]' required />
                             </div>
 
                             <div className="btn-relatar">

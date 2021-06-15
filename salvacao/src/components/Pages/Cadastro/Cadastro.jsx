@@ -46,6 +46,7 @@ const Cadastro = () => {
                                 className="input2"
                                 placeholder="Digite seu nome"
                                 name="nome"
+                                required
                             />
                         </div>
                         
@@ -55,6 +56,7 @@ const Cadastro = () => {
                                 className="input2"
                                 placeholder="Digite seu email"
                                 name="email"
+                                required
                             />
                         </div>
 
@@ -65,6 +67,7 @@ const Cadastro = () => {
                                 placeholder="Digite sua senha"
                                 name="senha"
                                 type="password"
+                                required
                             />
                         </div>
 
@@ -74,6 +77,7 @@ const Cadastro = () => {
                                 className="input2"
                                 placeholder="Digite seu endereço"
                                 name="endereco"
+                                required
                             />
                         </div>
 
@@ -83,16 +87,23 @@ const Cadastro = () => {
                                 className="input2"
                                 placeholder="Digite sua cidade"
                                 name="cidade"
+                                required
                             />
                         </div>
 
                         <div className="estado">
                             <label htmlFor="estado">Escolha seu Estado:</label>
-                            <Field
-                                className="input2"
-                                placeholder="Digite seu estado"
-                                name="estado"
-                            />
+
+                            <Field as="select" className="input2" name="estado">
+
+                                <option value="AM">AM</option>
+
+                                <option value="SP">SP</option>
+
+                                <option value="RJ">RJ</option>
+
+                            </Field>
+
                         </div>
 
                         <div className="telefone">
@@ -101,6 +112,7 @@ const Cadastro = () => {
                                 className="input2"
                                 placeholder="Digite seu telefone"
                                 name="telefone"
+                                required
                             />
                         </div>
                     </div>

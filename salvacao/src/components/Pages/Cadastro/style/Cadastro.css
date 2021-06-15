@@ -30,6 +30,16 @@
     box-shadow: 0 8px rgba(230, 102, 28, 0.349);
 }
 
+.input2{
+    width: 90%;
+    height: 45%;
+    background: white;
+    border: 2px solid rgba(0, 0, 0, 0.600);
+    border-radius: 5px;
+    padding: 10px;
+    font-weight: 700;
+}
+
 .passwd2, .name2, .email2, .endereco, .cidade, .estado, .telefone{
     display: flex;
     flex-direction: column;
@@ -39,6 +49,16 @@
     height: 12%;
     margin-top: 15px;
     overflow-y: hidden;
+}
+
+.passwd2 label, 
+.name2 label, 
+.email2 label, 
+.endereco label, 
+.cidade label, 
+.estado label, 
+.telefone label{
+    font-weight: 700;
 }
 
 .botao2{
@@ -53,12 +73,19 @@
     box-shadow: 0 8px rgba(230, 102, 28, 0.349);
 }
 
-.passwd2 input, .name2 input, .email2 input, .cidade input, .telefone input, .endereco input, .estado input{
+.passwd2 input:placeholder-shown,
+.name2 input:placeholder-shown, 
+.email2 input:placeholder-shown, 
+.cidade input:placeholder-shown, 
+.telefone input:placeholder-shown, 
+.endereco input:placeholder-shown, 
+.estado input:placeholder-shown{
     width: 90%;
     height: 45%;
     padding: 10px;
     border: 2px solid rgba(0, 0, 0, 0.600);
     border-radius: 5px;
+    font-weight: 700;
 }
 
 .cadastro-login2{
@@ -68,7 +95,8 @@
     border: 2px solid rgba(0, 0, 0, 0.600);
     cursor: pointer;
     text-transform: uppercase;
-    background-color: rgb(6, 180, 6)
+    background-color: rgb(6, 180, 6);
+    font-weight: 700;
 }
 
 .cadastro-login2:hover{
