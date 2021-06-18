@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import api from '../../../services/api';
 import './style/Profile.css';
 
@@ -61,6 +62,11 @@ export default function Profile(){
                     </div>
                 </div>
             </div>
+
+            <Link to="/delete" className="delete-user">
+                <button>Deletar Conta</button>
+            </Link>
+            
             
         </div>
     )

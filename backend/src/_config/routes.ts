@@ -13,6 +13,7 @@ routes.post('/pets', upload.array('foto'), animalController.create);
 routes.post('/login', authControler.auth);
 routes.post('/user/redefine', userController.redefine);
 routes.post('/user/create', userController.create);
+routes.post('/user/delete', userController.deleteUser);
 routes.get('/user/listone/:id', userController.listOne);
 routes.get('/pets/list', animalController.list);
 routes.get('/pets/list/one/:id', animalController.listOne);

@@ -17,11 +17,15 @@ export default function Password(){
         }
         
         await api.post('/user/redefine', data).then(res => {
-            if(res){
+            if(res.data.mensagem){
                 alert("Senha redefinida");
                 history.push("/login");
                 sessionStorage.removeItem("id");
                 sessionStorage.removeItem("nome");
+                window.location.reload();
+            }else if (res.data.erro){
+                alert("Erro na redefinição de senha")
+                history.push("/login");
                 window.location.reload();
             }
         });

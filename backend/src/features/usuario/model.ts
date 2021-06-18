@@ -12,8 +12,8 @@ async function updatePassword(email, senha) {
     const conn = await conexaoCreate.connect();
     const sql = 'UPDATE usuarios SET senha = ? WHERE email = ?;'
     const values = [senha, email];
-    const rows = await conn.query(sql, values);
-    return rows;
+    const [rows] = await conn.query(sql, values);
+    return rows.affectedRows;
 }
 
 async function listOne(id){
@@ -24,4 +24,12 @@ async function listOne(id){
     return rows;
 }
 
-module.exports = {createUser, updatePassword, listOne};
+async function deleteUser(email, senha){
+    const conn = await conexaoCreate.connect();
+    const sql = 'DELETE FROM usuarios WHERE email = ? AND senha = ?';
+    const values = [email, senha];
+    const [rows] = await conn.query(sql, values);
+    return rows.affectedRows;
+}
+
+module.exports = {createUser, updatePassword, listOne, deleteUser};

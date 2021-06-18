@@ -13,7 +13,7 @@ const Cadastro = () => {
         senha: Yup.string().min(4).required(),
         endereco: Yup.string(),
         cidade: Yup.string(),
-        estado: Yup.string().max(2),
+        estado: Yup.string(),
         telefone: Yup.string()
     })
 

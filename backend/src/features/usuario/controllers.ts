@@ -41,12 +41,16 @@ export default{
 
         const user = await model.updatePassword(email, senha);
 
-        if(user){
-            response.json({
+        if(user == 1){
+            const message = {
                 mensagem: "Senha redefinida"
-            })
+            }
+            response.send(message)
         }else{
-            console.log("Deu ruim")
+            const error = {
+                erro: "Deu ruim"
+            }
+            response.send(error)
         }
     },
 
@@ -60,6 +64,28 @@ export default{
 
         if(user){
             response.send(user)
+        }
+    },
+
+    async deleteUser(request: Request, response: Response){
+
+        const{
+            email,
+            senha
+        } = request.body
+
+        const user = await model.deleteUser(email, senha);
+
+        if( user == 1 ){
+            const message = {
+                sucesso: "Deu certo"
+            }
+            response.send(message)
+        }else{
+            const error = {
+                erro: "deu ruim"
+            }
+            response.send(error)
         }
     }
 }

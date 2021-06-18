@@ -11,6 +11,7 @@ import Cadastro from '../Pages/Cadastro/Cadastro';
 import Pets from '../Pages/Pets/Pets';
 import Password from '../Pages/Password/Password';
 import Pet from '../Pages/Pets/Pet';
+import Delete from '../Delete/Delete';
 
 
 const App = () => (
@@ -26,6 +27,7 @@ const App = () => (
       <Route component={Pets} exact path="/pets" />
       <Route component={Password} exact path="/password"/>
       <Route component={Pet} exact path="/pet:id"/>
+      <Route component={Delete} exact path="/delete"/>
     </Switch>
   </Router>
     
