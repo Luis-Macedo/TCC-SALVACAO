@@ -24,7 +24,7 @@ export const NavbarData = [
         cName: 'nav-text'
     },
     {
-        title: 'Profile',
+        title: 'Perfil',
         path: '/profile',
         icon: <FaIcons.FaUserAlt/>,
         cName: 'nav-text'
