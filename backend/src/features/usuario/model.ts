@@ -4,8 +4,10 @@ async function createUser(nome, email, senha, endereco, cidade, estado, telefone
     const conn = await conexaoCreate.connect();
     const sql = 'INSERT INTO usuarios(nome, email, senha, endereco, cidade, estado, telefone) VALUES(?, ?, ?, ?, ?, ?, ?);'
     const values = [nome, email, senha, endereco, cidade, estado, telefone];
-    const rows = await conn.query(sql, values);
-    return rows;
+    const [rows] = await conn.query(sql, values).then(() => {
+        return rows.affectedRows
+    }).catch(err => {return err});
+    return 0;
 }
 
 async function updatePassword(email, senha) {

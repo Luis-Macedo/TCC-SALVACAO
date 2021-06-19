@@ -20,15 +20,21 @@ const Cadastro = () => {
     const handleFormSubmit = values =>{
 
         api.post("/user/create", values).then(res => {
-            const { data } = res
-            console.log(data)
-            if(data){
-                alert("Cadastro Efetuado com sucesso")
-                history.push('/login')
-                window.location.reload()
+            if(res && res.data.mensagem){
+
+                alert(res.data.mensagem);
+                history.push('/login');
+                window.location.reload();
+
+            }
+            else if(res && res.data.erro){
+
+                alert("Erro ao cadastrar usuário. Email já está em uso");
+                history.push("/cadastro");
+                window.location.reload();
+
             }
         })
-        .catch(err => alert(`Cadastro não pôde ser efetuado: Email já cadastrado ${err}`));
     }
 
     return(

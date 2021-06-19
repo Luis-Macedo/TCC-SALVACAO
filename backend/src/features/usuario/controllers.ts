@@ -20,14 +20,20 @@ export default{
 
         const user = await model.createUser(nome, email, senha, endereco, cidade, estado, telefone);
         
-        if(user){
-            response.json({
+        if(user == 1){
+            const message = {
                 mensagem: "Usuário Cadastrado"
-            })
+            }
+            response.send(message)
             console.log('Usuário Cadastrado')
-        }else{
-            console.log('deu ruim')
+        }else if(user == 0){
+            const error = {
+                erro: "Usuário não cadastrado"
+            }
+            return response.send(error)
         }
+
+        
     },
 
     async redefine(request: Request, response: Response){
